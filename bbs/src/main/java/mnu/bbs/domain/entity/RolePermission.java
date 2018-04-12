@@ -15,7 +15,7 @@ import java.util.Date;
  * desc
  */
 @TableName("RolePermission")
-public class RolePermission {
+public class RolePermission extends Super<RolePermission>{
 	private static final long serialVersionUID = 1L;
 	
 	/**
