@@ -1,0 +1,15 @@
+#logging
+logging:
+  level:
+    mnu.bbs.domain.mapper: debug
+spring:
+ datasource:
+  type: com.alibaba.druid.pool.DruidDataSource  
+  url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=utf8
+  username: root
+  password: mysql
+  driver-class-name: com.mysql.jdbc.Driver
+  maxActive: 20 #最大连接数量
+  initialSize: 1 #初始Connection数量
+  maxWait: 60000
+  minIdle: 1 #最小连接数量
