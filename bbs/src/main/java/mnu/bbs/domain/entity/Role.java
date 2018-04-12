@@ -10,58 +10,41 @@ import java.util.Date;
 
 /**
  * @author xian
- * date 2018/4/11 16:35
- * desc 用户实体类
+ * date 2018/4/12 13:52
+ * desc 角色类
  */
-public class User extends Super<User> {
+
+public class Role extends Super<Role> {
 	private static final long serialVersionUID = 1L;
 	/**
-	 * 用户名
+	 * 角色名
 	 */
 	private String name;
 	/**
-	 * 密码
+	 * 排序
 	 */
-	private String password;
+	private Integer sort;
 	/**
-	 * 加密盐
+	 * 描述
 	 */
-	private String salt;
+	private String description;
 	/**
-	 * 邮箱
-	 */
-	private String email;
-	/**
-	 * 学号
-	 */
-	private Integer number;
-	/**
-	 * 账号类型
-	 */
-	private Integer type;
-	/**
-	 * 用户状态：0 禁用 1 正常
+	 * 状态
 	 */
 	private Integer status;
 	/**
 	 * 创建时间
 	 */
-	@TableField( fill = FieldFill.INSERT)
+	@TableField(fill = FieldFill.INSERT)
 	private Date createTime;
 	/**
 	 * 修改时间
 	 */
 	@TableField(fill = FieldFill.INSERT_UPDATE)
 	private Date updateTime;
-	/**
-	 *  Constructor
-	 */
-	public User () {
-	}
 	
-	/**
-	 * Description Getter and Setter
-	 */
+	public Role() {}
+	
 	public String getName () {
 		return name;
 	}
@@ -70,20 +53,20 @@ public class User extends Super<User> {
 		this.name = name;
 	}
 	
-	public String getSalt () {
-		return salt;
+	public Integer getSort () {
+		return sort;
 	}
 	
-	public void setSalt (String salt) {
-		this.salt = salt;
+	public void setSort (Integer sort) {
+		this.sort = sort;
 	}
 	
-	public String getEmail () {
-		return email;
+	public String getDescription () {
+		return description;
 	}
 	
-	public void setEmail (String email) {
-		this.email = email;
+	public void setDescription (String description) {
+		this.description = description;
 	}
 	
 	public Integer getStatus () {
@@ -110,39 +93,12 @@ public class User extends Super<User> {
 		this.updateTime = updateTime;
 	}
 	
-	public String getPassword () {
-		return password;
-	}
-	
-	public void setPassword (String password) {
-		this.password = password;
-	}
-	
-	public Integer getNumber () {
-		return number;
-	}
-	
-	public void setNumber (Integer number) {
-		this.number = number;
-	}
-	
-	public Integer getType () {
-		return type;
-	}
-	
-	public void setType (Integer type) {
-		this.type = type;
-	}
-	
 	@Override
 	public String toString () {
-		return "User{" +
+		return "Role{" +
 				"name='" + name + '\'' +
-				", password='" + password + '\'' +
-				", salt='" + salt + '\'' +
-				", email='" + email + '\'' +
-				", number=" + number +
-				", type=" + type +
+				", sort=" + sort +
+				", description='" + description + '\'' +
 				", status=" + status +
 				", createTime=" + createTime +
 				", updateTime=" + updateTime +

@@ -10,8 +10,10 @@ import java.io.Serializable;
 /**
  * @author xian
  * date 2018/4/11 16:16
+ * 实体父类
  */
 public class Super<T extends Model> extends Model<T> {
+	private static final long serialVersionUID = 1L;
 	/**
 	 * 所有实体类主键
 	 * */
