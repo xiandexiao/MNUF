@@ -9,10 +9,7 @@ import mnu.bbs.domain.entity.Permission;
 import mnu.bbs.domain.entity.User;
 import mnu.bbs.domain.mapper.PermissionMapper;
 import mnu.bbs.domain.service.IUserService;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.AuthenticationInfo;
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.authc.SimpleAuthenticationInfo;
+import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
@@ -51,12 +48,17 @@ public class MyShiroRealm extends AuthorizingRealm {
 		String username = (String) authenticationToken.getPrincipal();
 		logger.info("username={}",username);
 		//查询该用户信息
-		EntityWrapper<User> wrapper = new EntityWrapper<User>();
-		wrapper.eq("username", username);
-		logger.info("wrapper",wrapper);
+		//查询用户信息
+		EntityWrapper<User> wrapper = new EntityWrapper<>();
+		wrapper.eq("name", username).or().eq("email",username).or().eq("number",username);
 		User user = iUserService.selectOne(wrapper);
 		if (user == null) {
+			System.out.println("user=null");
 			return null;
+		}
+		logger.info("status={}",user.getStatus());
+		if(user.getStatus() == 0) {
+			throw new LockedAccountException(); //帐号锁定
 		}
 		SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(user, user.getPassword(),
 				ByteSource.Util.bytes(user.getSalt()),"MyShiroRealm");

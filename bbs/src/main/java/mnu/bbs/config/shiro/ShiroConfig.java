@@ -57,11 +57,13 @@ public class ShiroConfig {
 		// 过滤链
 		filterChainDefinitionMap.put("/css/**", "anon");
 		filterChainDefinitionMap.put("/fonts/**", "anon");
-		filterChainDefinitionMap.put("/img/**", "anon");
+		filterChainDefinitionMap.put("/images/**", "anon");
+		filterChainDefinitionMap.put("/assets/**", "anon");
+		filterChainDefinitionMap.put("/avatar/**", "anon");
 		filterChainDefinitionMap.put("/js/**", "anon");
-		filterChainDefinitionMap.put("/plugins/**", "anon");
+		filterChainDefinitionMap.put("/particles.json", "anon");
 		filterChainDefinitionMap.put("/500.html", "perms");
-		filterChainDefinitionMap.put("/favicon.ico", "anon");
+		filterChainDefinitionMap.put("/404.html", "anon");
 		filterChainDefinitionMap.put("/mylogin", "anon");
 		filterChainDefinitionMap.put("/register.html", "anon"); // 注册界面
 		filterChainDefinitionMap.put("/register", "anon"); // 注册提交数据
