@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="../static/images/logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="../static/css/detail.css"/>
+    <link rel="stylesheet" href="../static/assets/Cropper/cropper.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <title>账号管理</title>
+</head>
+<body>
+<div class="content" id="content">
+    <!--Header-->
+    <div id="header-top" class="headWrap">
+        <a href="/index" class="headLogo"></a>
+        <ul class="headLeft">
+            <li style="margin-right: 35px">
+                <a href="/index" class="hidefocus">首页</a>
+            </li>
+            <li >
+                <a href="https://www.meizu.com/pro7/" class="hidefocus" >我的校园</a>
+            </li>
+            <li >
+                <a href="http://retail.meizu.com" class="hidefocus">摄影天地</a>
+            </li>
+            <li>
+                <a href="http://www.flyme.cn" class="hidefocus" >资源分享</a>
+            </li>
+            <li>
+                <a href="http://service.meizu.com" class="hidefocus" >综合讨论</a>
+            </li>
+            <li>
+                <a href="http://bbs.meizu.cn" class="hidefocus">全部版块</a>
+            </li>
+        </ul>
+        <div class="headRight">
+		<span >
+			<a  href="/detail" title="${user.name}">${user.name}</a>
+			<span class="line_head">&nbsp;|&nbsp;</span>
+			<a  href="/logout">退出</a>
+		</span>
+
+        </div>
+    </div>
+    <!--content-->
+    <div class="flymeContent">
+        <div id="navWrap" class="navWrap">
+            <ul class="na">
+                <li id="accountManage"><a href="/detail" class="linkABlue">账号管理</a><div class="current"></div></li>
+                <!--<li id="contact"><a href="https://pay.meizu.com/meibi/account" class="linkAGray">魅币</a></li>-->
+            </ul>
+        </div>
+        <div class="mainWrap">
+            <div class="topWrap">
+                <div class="top-leftWrap">
+                    <img id="userImg" src="/avatar/${user.avatar}">
+                    <a id="modifyIconTip" class="modifyIconTip modify" href="#">编辑头像</a>
+                    <a class="modifyIconTip-bg"></a>
+                </div>
+                <div class="top-rightWrap">
+                    <div id="nickNameTitle" class="lineWrap nickname">
+                        <label id="nickName">
+                            ${user.name}
+                        </label>
+                        <a id="nickNameEdite" class="pointer modify"></a>
+                        <!-- 模态框（Modal） -->
+                        <div class="modal fade" id="msgModal" tabindex="-1" role="dialog"  aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title">提示</h4>
+                                    </div>
+                                    <div class="modal-body"></div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal -->
+                        </div>
+                    </div>
+                    <div id="nickNameCon"  style="display: none">
+                        <div class="lineWrap">
+                            <input type="text" value="${user.name}" name="nickname" id="newnickName"/>
+                            <div class="tooltip fade right in" role="tooltip" style="top: 80px; left: 456px; display: none;">
+                                <div class="tooltip-arrow" style="top: 50%;"></div>
+                                <div class="tooltip-inner" style="height: 45px;line-height: 45px">支持中英文、数字，下划线</div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="edit">
+                            <a class="fullBtnBlue fleft" id="editSave" data-toggle="modal" data-target="#msgModal">保存</a>
+                            <a class="fullBtnGray fleft" id="editCancel"href="/detail">取消</a>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="grayBorderB">
+                <div class="titleWrap">
+                    <div class="leftWrap-bottom">
+                        <span class="right" style="float: right"></span>
+                        <span class="fontBig left" style="float: left">账号信息</span>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="bodyWrap">
+                <!--Password-->
+                <div id="pwdWrap" class="lineWrap pwdWrapTop" style="display: block;">
+                    <div class="item-left">密码</div>
+                    <div class="item-right"><a href="javascript:void(0);" class="linkABlue modify" id="modify-pwd">修改</a></div>
+                    <div class="clear"></div>
+                </div>
+                <div id="changePasswordWrapFirst" class="grayBorderT grayBorderB" style="display: none;">
+
+                    <div id="changePwdValidPhone" class="change_valid_wrap" >
+                        <div class="setQuestion-titleWrap">
+                            <span>修改密码（验证邮箱）</span>
+
+                        </div>
+                        <form  class="setQuestion-bodyWrap" novalidate="novalidate">
+                            <div class="lineWrap">
+                                <div class="leftWrap">
+                                    <label class="leftLabel">邮箱账号</label>
+                                </div>
+                                <input type="text" value="" data-key="kapkey" name="bindPhone" id="ce-u-check-phone" class="normalInput error">
+                                <span id="email-span" style="margin-left: 10px"></span>
+                            </div>
+                            <div class="leftWrap">
+                                <label class="leftLabel">验证码</label>
+                            </div>
+                            <div class="normalInput bottom ">
+                                <input type="text" name="kapkeyPhone" id="kapkeyTel-check-phone" class="kapkey error" maxlength="10" autocomplete="off">
+                                <span class="form-line"></span>
+                                <a id="getKey-checkPhoneOld" href="javascript:void(0);" class="linkABlue" style="text-decoration: none">获取验证码</a>
+                            </div>
+                            <span id="code-span" style="position: absolute;top: 498px;margin-left: 10px"></span>
+                            <div class="lineWrap">
+                                <label class="fleft">&nbsp;</label>
+                                <a class="fullBtnBlue save_form fleft" id="ce-u-pwd-phone-check">下一步</a>
+                                <a class="fullBtnGray cancel_form fleft" id="ce-u-pwd-phone-cancel" href="/detail">取消</a>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </form>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div id="changePasswordWrapSecond" class="grayBorderT grayBorderB" style="display: none">
+                    <div  class="change_valid_wrap">
+                        <form  class="setQuestion-bodyWrap" novalidate="novalidate">
+                        <div class="setQuestion-titleWrap">
+                            <span>修改密码</span>
+                        </div>
+                            <div class="lineWrap">
+                                <div class="leftWrap">
+                                    <label class="leftLabel">新密码</label>
+                                </div>
+                                <input type="password"  name="new-password"  class="normalInput">
+                                <span id="password-span" style="margin-left: 10px"></span>
+                            </div>
+                            <div class="lineWrap">
+                                <div class="leftWrap">
+                                    <label class="leftLabel">确认密码</label>
+                                </div>
+                                <input type="password" name="repassword" class="normalInput">
+                                <span id="repassword-span" style="margin-left: 10px"></span>
+                            </div>
+
+                            <div class="lineWrap">
+                                <label class="fleft">&nbsp;</label>
+                                <a class="fullBtnBlue save_form fleft" id="verifyPassword" data-toggle="modal" data-target="#pwdModal">保存</a>
+                                <a class="fullBtnGray cancel_form fleft" id="cancelPassword" href="/detail">取消</a>
+                                <div class="clear"></div>
+                            </div>
+                            <!-- 模态框（Modal） -->
+                            <div class="modal fade" id="pwdModal" tabindex="-1" role="dialog"  aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title">提示</h4>
+                                        </div>
+                                        <div class="modal-body"></div>
+                                        <div class="modal-footer">
+                                            <a  href="/logout">退出登录</a>
+                                            <button  type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal -->
+                            </div>
+                            <div class="clear"></div>
+                        </form>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="emailWrap">
+                        <div class="item-left">邮箱</div>
+                        <div class="item-middle" id="email-item-middle1" >
+                            <span id="current_email" class="email bold">${user.email!"未绑定"}</span><br>
+                            <span class="grayTip">可通过邮箱找回密码</span>
+                        </div>
+                        <div class="item-right"><a href="javascript:void(0);" class="linkABlue modify">修改</a></div>
+                    <div class="clear"></div>
+                </div>
+                    <div class="numberWrap">
+                        <div class="item-left">学号</div>
+                        <div class="item-middle">
+                            <span id="" class="email bold">${user.number!"未绑定"}</span><br>
+                            <span class="grayTip">可通过学号获取更多权限</span>
+                        </div>
+                        <div class="item-right"><a href="javascript:void(0);" class="linkABlue modify">修改</a></div>
+                        <div class="clear"></div>
+                    </div>
+            </div>
+            <div id="upload">
+                <form id="uploadForm" name="uploadForm" enctype="multipart/form-data">
+                    <div class="lineWrap grayTip divFloat" id="bg4chooseImg">
+                        <a id="chooseImg">
+                            <span>选择照片</span>
+                        </a>
+                    </div>
+                    <input type="file" id="file" name="file" class="file" size="28" accept="image/*">
+                    <!--[if lte IE 8]><span style="position:absolute; left:140px; top:5px">双击选择照片</span><![endif]-->
+                </form>
+                <div class="contain">
+                    <!-- Wrap the image or canvas element with a block element (container) -->
+                    <div class="frame">
+                        <img src="/avatar/${user.avatar}" id="image">
+                        <!--<div class="userInfo_box_uploadImg_content_mian_left_btns_others">
+                                <label id="userImg_rotate" class="fl curp">旋&nbsp;&nbsp;转</label>
+                                <label id="userImg_reUpload" class="fr curp">重新上传</label>
+                            </div>-->
+
+                    </div>
+                    <div class="preview200 ">
+                        <div class="userImg_preview"></div>
+                    </div>
+                    <div class="preview100">
+                        <div class="userImg_preview"></div>
+                    </div>
+                    <div class="preview50">
+                        <div class="userImg_preview"></div>
+                    </div>
+                    <div class="instruction">
+                        您上传的头像会自动生成三种尺寸，请注意中小尺寸是否清晰
+                    </div>
+                </div>
+                <div class="lineWrap ftop" style="">
+                    <a class="fullBtnBlue fleft" id="save" data-toggle="modal" data-target="#myModal">保存</a>
+                    <!-- 模态框（Modal） -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"  aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header" style="color: #3AA5EF">
+                                    <span class="header-msg">正在上传... ...</span>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+
+                                <div class="modal-body" style="background: url('/images/loading.gif') center no-repeat;height: 100px;text-align: center;line-height: 70px;font-size: 18px">
+
+                                </div>
+                                <div class="modal-footer center-block">
+                                    <button type="button" class="btn btn-info yes" data-dismiss="modal">确定</button>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal -->
+                    </div>
+                    <a class="fullBtnGray black iconCancel fleft" id="cancel" href="/detail">取消</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/assets/Cropper/cropper.js"></script>
+<script src="../static/js/cropper.js"></script>
+</html>

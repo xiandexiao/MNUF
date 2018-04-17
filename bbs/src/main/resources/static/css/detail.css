@@ -1,0 +1,516 @@
+* { word-wrap: break-word; word-break:break-all;}
+body { background: #FFF;}
+body, input, button, select, textarea { font-size: 14px ; font-family:"Microsoft Yahei",Tahoma,'Simsun',Arial,Helvetica,sans-serif; color: #515151; outline:none;}
+textarea { resize: none; }
+body, ul, ol, li, dl, dd, p, h1, h2, h3, h4, h5, h6, form, fieldset, hr{ margin: 0; padding: 0; outline:none;}
+caption, th { text-align: left; font-weight: 400; }
+ul li, .xl li { list-style: none; }
+a:hover {color: #515151;outline:none;text-decoration: none!important;}
+a:visited {color: #222222;outline:none;text-decoration: none}
+a:active{color: #222222;outline:none;text-decoration: none}
+a:link{color: #222222;outline:none;text-decoration: none}
+.clear:after{ content:""; height:0; line-height:0; display:block; visibility:hidden; clear:both;}
+.clearfix{zoom:1;}
+.clear{content:""; height:0; line-height:0; display:block; visibility:hidden; clear:both;}
+
+.headWrap {
+    position: relative;
+    height: 70px;
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    clear: both;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.headLogo {
+    margin-top: 20px;
+    float: left;
+    margin-right: 60px;
+    display: block;
+    width: 148px;
+    height: 60px;
+    border: none;
+    overflow: hidden;
+}
+
+.headLeft {
+    margin-top: 39px;
+    float: left;
+    z-index: 2;
+    width: 580px;
+    height: 26px;
+    overflow: hidden;
+}
+.headLeft .hidefocus:hover {
+    color: #00aeef;
+}
+
+li.head-store {
+    width: 73px;
+}
+.headLeft li {
+    float: left;
+    height: 24px;
+    position: relative;
+    margin-right: 50px;
+}
+.headLogo  {
+    background: url("../images/brand-1.png") center no-repeat;
+    background-size: 80%;
+}
+
+.headLeft a {
+    font-size: 18px;
+}
+
+.headRight {
+    margin-top: 38px;
+    float: right;
+    width: 210px;
+    text-align: right;
+}
+
+.headRight a {
+    color: #7f7f7f;;
+}
+.headRight a:hover {
+    color: black;
+}
+
+#head-name {
+    max-width: 150px;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+#nickName {
+    font-size: 18px;
+    float: left;
+}
+#nickNameEdite {
+    display: inline-block;
+    overflow: hidden;
+    margin: 4px 0 0 5px;
+    width: 16px;
+    height: 17px;
+    float: left;
+    position: relative;
+    cursor: pointer;
+    background: url(../images/elements.png) 0 0 no-repeat;
+}
+.flymeContent {
+    width: 950px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: transparent;
+    position: relative;
+}
+.navWrap {
+    height: 58px;
+    border-bottom: #e4e7e9 1px solid;
+}
+
+.navWrap .na {
+    display: block;
+    float: left;
+    line-height: 58px;
+}
+.navWrap .na li {
+    position: relative;
+    display: inline-block;
+    margin-right: 40px;
+    width: 100px;
+    height: 100%;
+    float: left;
+}
+.navWrap .na li a {
+    display: inline-block;
+    color: #00a7ea;
+    width: 100%;
+    height: 56px;
+    font-size: 16px;
+    text-align: center;
+    border-bottom: 2px solid #00a7ea;
+}
+
+.topWrap {
+    margin: 20px auto;
+    margin-left: 17px;
+}
+
+.top-leftWrap {
+    float: left;
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+.top-leftWrap:hover .modifyIconTip{
+    color: #fff;
+    display: block;
+    background: #a2a2a2;
+
+}
+#userImg {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 4;
+}
+.modifyIconTip {
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    bottom: 0;
+    cursor: pointer;
+    z-index: 200;
+    display: none;
+    position: absolute;
+}
+.modifyIconTip-bg {
+    display: none;
+    width: 100px;
+    height: 20px;
+    left: 0;
+    bottom: 0;
+    background: #000;
+    opacity: .2;
+    overflow: hidden;
+    filter: alpha(opacity=20);
+    z-index: 100;
+    cursor: pointer;
+    position: absolute;
+}
+.top-rightWrap {
+    padding-left: 17px;
+    float: left;
+    width: 80%;
+}
+.nickname {
+    position: relative;
+    height: 30px;
+}
+#setUserNameWrap {
+    height: 30px;
+}
+.grayTip {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    color: #7f7f7f;
+}
+.ftop {
+    margin-top: 10px;
+}
+
+
+/*Avatar*/
+
+
+.mainWrap .grayBorderB {
+    border-bottom: 1px solid #f2f2f2;
+}
+.grayBorderB .leftWrap-bottom {
+    height: 33px;
+}
+
+.grayBorderB .fright {
+    font-size: 14px;
+    text-align: start;
+    float: right;
+}
+.grayBorderB .fontBig {
+    padding-left: 17px;
+    font-size: 18px;
+    text-align: start;
+    float: left;
+}
+
+/*upload*/
+#upload {
+    padding-left: 17px;
+    display: none;
+}
+#uploadForm {
+    position: relative;
+    height: 32px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#bg4chooseImg {
+    z-index: 9;
+}
+.divFloat {
+    position: absolute;
+}
+
+#chooseImg {
+    width: 120px;
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    text-align: right;
+    padding-right: 15px;
+    border: solid 1px #e3e5e6;
+    outline: none;
+    color: #474747;
+    zoom: 1;
+    overflow: hidden;
+    position: relative;
+    font-size: 14px;
+    background: url("../images/act.png") -182px -325px no-repeat;
+}
+
+
+#file {
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    z-index: 10;
+    text-indent: -9999px;
+}
+.file {
+    width: 120px;
+    filter: alpha(opacity : 0);
+    opacity: 0;
+    cursor: pointer;
+    margin-bottom: 0px;
+}
+
+.contain {
+    height: 300px;
+    width: 1000px;
+    margin-top: 5px;
+    position: relative;
+}
+div.frame {
+    border: solid 1px #515151;
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+    margin-right: 70px;
+    position: relative;
+    float: left;
+
+}
+
+
+.contain .preview200 {
+    border: solid 1px #515151;
+    overflow: hidden;
+    top: 20px;
+    left: 375px;
+    width: 200px;
+    margin-right: 35px;
+    height: 200px;
+    margin-top: 20px;
+    position: absolute;
+    z-index: 99;
+}
+.contain .preview100 {
+    border: solid 1px #515151;
+    width: 100px;
+    margin-right: 35px;
+    height: 100px;
+    overflow: hidden;
+    margin-top: 20px;
+    position: absolute;
+    top: 20px;
+    left: 605px;
+}
+
+.contain .preview50 {
+    border: solid 1px #515151;
+    width: 50px;
+    margin-right: 35px;
+    height: 50px;
+    overflow: hidden;
+    margin-top: 20px;
+    position: absolute;
+    top: 20px;
+    left: 735px;
+}
+
+.ftop {
+    margin-top: 28px;
+    margin-bottom: 28px;
+    height: 50px;
+}
+#save, #cancel {
+    width: 138px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+a.fullBtnBlue {
+    display: inline-block;
+    height: 50px;
+    width: 156px;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    background-color: #32a5e7;
+    color: #fff;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+a.fullBtnBlue:hover {
+    background-color: #0084ff;
+    color: #F2F2F2;
+}
+.fleft {
+    float: left;
+}
+#cancel {
+    margin-left: 25px;
+}
+a.fullBtnGray {
+    display: inline-block;
+    width: 156px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    background-color: #464646;
+    color: #fff;
+}
+a.fullBtnGray:hover {
+    background-color: #5e5e5e;
+    color: #F2F2F2;
+}
+.bodyWrap {
+    padding: 0 20px;
+}
+.mainWrap .lineWrap {
+    height: 75px;
+}
+.pwdWrapTop {
+    margin-top: 20px;
+}
+.item-right {
+    height: 100%;
+    float: right;
+}
+a.linkABlue{
+    color: #00a7ea;
+}
+.item-left {
+    height: 100%;
+    width: 115px;
+    float: left;
+}
+
+.item-middle {
+    height: 100%;
+    float: left;
+}
+.bold {
+    font-weight: bold;
+}
+.grayTip {
+    height: 50px;
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    color: #7f7f7f;
+
+}
+#nickNameCon {
+
+}
+
+#newnickName {
+    line-height: 22px;
+    padding: 14px 10px;
+    height: 52px;
+    width: 320px;
+}
+
+.bodyWrap .modify_content {
+    margin-bottom: 20px;
+}
+.grayBorderT {
+    border-top: 1px solid #f2f2f2;
+}
+.grayBorderB {
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.cEmail-titleWrap, .bindEmail-titleWra, .cTel-titleWrap, .bindTel-titleWrap, .bindEmail-titleWrap, .setQuestion-titleWrap, .cQuestion-titleWrap {
+    font-size: 18px;
+    height: 80px;
+    line-height: 80px;
+}
+
+.leftWrap {
+    float: left;
+    height: 52px;
+    line-height: 52px;
+}
+bodyWrap form label {
+    display: inline-block;
+    width: 114px;
+}
+.leftLabel {
+    display: inline-block;
+    width: 96px;
+}
+.normalInput {
+    position: relative;
+    display: inline-block;
+    padding: 0px 10px;
+    width: 320px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #dadada;
+    outline: none;
+    color: #474747;
+    zoom: 1;
+    overflow: hidden;
+}
+#kapkeyTel-check-phone {
+    width: 220px;
+    border: none;
+}
+.normalInput input {
+    font-size: 14px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+.form-line {
+    color: #d9d9d9;
+    height: 40px;
+    display: inline-block;
+    border-left: 1px solid #dadada;
+    position: absolute;
+    right: 100px;
+    top: 5px;
+    _top: 0;
+}
+span.error, span.otherError {
+    margin-left: 20px;
+    color: red;
+    height: 14px;
+}
+
+.bodyWrap form label {
+    display: inline-block;
+    width: 114px;
+}
+
