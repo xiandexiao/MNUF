@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/post-header.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body style="background-color: #F2F2F2">
+    <div class="content" style="background-color: #FFF" >
+        <!--Header-->
+        <div id="header-top" class="headWrap" style="height: 90px">
+            <a href="/index" class="headLogo"></a>
+            <ul class="headLeft">
+                <li style="margin-right: 35px">
+                    <a href="/index" class="hidefocus">首页</a>
+                </li>
+                <li >
+                    <a href="https://www.meizu.com/pro7/" class="hidefocus" >我的校园</a>
+                </li>
+                <li >
+                    <a href="http://retail.meizu.com" class="hidefocus">摄影天地</a>
+                </li>
+                <li>
+                    <a href="http://www.flyme.cn" class="hidefocus" >资源分享</a>
+                </li>
+                <li>
+                    <a href="http://service.meizu.com" class="hidefocus" >综合讨论</a>
+                </li>
+                <li>
+                    <a href="http://bbs.meizu.cn" class="hidefocus">全部版块</a>
+                </li>
+            </ul>
+            <div class="headRight">
+		<span >
+			<a  href="/detail" title="${user.name}">${user.name}</a>
+			<span class="line_head">&nbsp;|&nbsp;</span>
+			<a  href="/logout">退出</a>
+		</span>
+
+            </div>
+        </div>
+    </div>
+    <div class="wp" id="wp">
+        <div class="newthread_post">
+            <div id="pt" class="bm cl">
+                <div class="z">  <a href="/index">首页</a>
+                    <b>&nbsp;&nbsp;›&nbsp;</b>
+                    发表帖子
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <label style="font-weight: bolder" for="title">标题</label>
+            <input type="text" id="title" maxlength="25" placeholder="最多25个字符" name="title"/>
+            <div class="post-wrap">
+                <div class="post-head">
+                    <div style="position: relative;">
+                        <a id="chooseImg">
+                            <span>添加照片</span>
+                        </a>
+                        <input type="file" id="file" name="file" size="28" accept="image/*">
+                    </div>
+                </div>
+                <div class="post-body">
+                    <textarea maxlength="255" style="width: 800px;height: 320px"></textarea>
+                </div>
+            </div>
+            <div class="post-foot">
+                <a id="submit" data-toggle="modal" data-target="#myModal">发表帖子</a>
+            </div>
+            <!-- 模态框（Modal） -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog"  aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="color: #3AA5EF">
+                            <span class="header-msg">正在上传... ...</span>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+
+                        <div class="modal-body" style="background: url('/images/loading.gif') center no-repeat;height: 100px;text-align: center;line-height: 70px;font-size: 18px">
+
+                        </div>
+                        <div class="modal-footer center-block">
+                            <button type="button" class="btn btn-info yes" data-dismiss="modal">确定</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal -->
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/push.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</html>
