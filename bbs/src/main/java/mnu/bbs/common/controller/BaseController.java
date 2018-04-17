@@ -2,8 +2,10 @@ package mnu.bbs.common.controller;
 
 import mnu.bbs.common.result.JsonResult;
 import mnu.bbs.domain.entity.User;
+import mnu.bbs.domain.mapper.UserMapper;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
 * Author: xian
@@ -11,6 +13,8 @@ import org.apache.shiro.subject.Subject;
 * Description 基础控制器，进行数据包装
 */
 public class BaseController {
+    @Autowired
+    private UserMapper userMapper;
     /**
      * 渲染失败数据
      *
@@ -96,6 +100,11 @@ public class BaseController {
     public User getCurrentUser() {
         Subject currentUser = SecurityUtils.getSubject();
         User user = currentUser.getPrincipals().oneByType(User.class);
+        return user;
+    }
+    
+    public User getUpdatedUser() {
+        User user = userMapper.selectById(getCurrentLoginId());
         return user;
     }
     
