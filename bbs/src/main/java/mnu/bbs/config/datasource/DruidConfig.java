@@ -49,7 +49,6 @@ public class DruidConfig {
 	public DataSource dataSource() {
 		//@Primary 注解作用是当程序选择dataSource时选择被注解的这个
 		DruidDataSource datasource = new DruidDataSource();
-		System.out.println(url);
 		datasource.setUrl(url);
 		datasource.setUsername(username);
 		datasource.setPassword(password);
