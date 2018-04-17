@@ -3,6 +3,9 @@
  */
 package mnu.bbs.domain.entity;
 
+import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.enums.FieldFill;
+
 import java.util.Date;
 
 /**
@@ -16,7 +19,7 @@ public class Post extends Super<Post> {
 	/**
 	 * 贴子名
 	 */
-	private String name;
+	private String title;
 	/**
 	 * 贴子发布人名
 	 */
@@ -26,24 +29,30 @@ public class Post extends Super<Post> {
 	 */
 	private Integer type;
 	/**
+	 * 图片地址
+	 */
+	private String url;
+	/**
 	 * 贴子内容
 	 */
 	private String content;
 	/**
 	 * 创建时间
 	 */
+	@TableField(fill = FieldFill.INSERT)
 	private Date createTime;
 	/**
 	 * 更新时间
 	 */
+	@TableField(fill = FieldFill.INSERT_UPDATE)
 	private Date updateTime;
 	
-	public String getName () {
-		return name;
+	public String getTitle () {
+		return title;
 	}
 	
-	public void setName (String name) {
-		this.name = name;
+	public void setTitle (String title) {
+		this.title = title;
 	}
 	
 	public String getUserName () {
@@ -70,6 +79,14 @@ public class Post extends Super<Post> {
 		this.content = content;
 	}
 	
+	public String getUrl () {
+		return url;
+	}
+	
+	public void setUrl (String url) {
+		this.url = url;
+	}
+	
 	public Date getCreateTime () {
 		return createTime;
 	}
@@ -89,9 +106,10 @@ public class Post extends Super<Post> {
 	@Override
 	public String toString () {
 		return "Post{" +
-				"name='" + name + '\'' +
+				"title='" + title + '\'' +
 				", userName='" + userName + '\'' +
 				", type=" + type +
+				", url='" + url + '\'' +
 				", content='" + content + '\'' +
 				", createTime=" + createTime +
 				", updateTime=" + updateTime +
