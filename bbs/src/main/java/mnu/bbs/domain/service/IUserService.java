@@ -12,4 +12,17 @@ import mnu.bbs.domain.entity.User;
  * desc
  */
 public interface IUserService extends IService<User> {
+	/**
+	 * 插入用户头像
+	 */
+	boolean updateAvatar(String fileName,Integer id);
+	
+	/**
+	 *
+	 */
+	boolean updateName(Integer id, String name);
+	
+	String selectEmail(Integer id,String value);
+	
+	boolean updatePassword(Integer id,String value);
 }

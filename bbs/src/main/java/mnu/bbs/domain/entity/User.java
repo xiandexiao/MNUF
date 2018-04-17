@@ -34,15 +34,19 @@ public class User extends Super<User> {
 	/**
 	 * 学号
 	 */
-	private Integer number;
+	private String number;
 	/**
-	 * 账号类型
+	 * 账号类型 0:学号 1:邮箱
 	 */
 	private Integer type;
 	/**
 	 * 用户状态：0 禁用 1 正常
 	 */
 	private Integer status;
+	/**
+	 * 头像:地址
+	 */
+	private String avatar;
 	/**
 	 * 创建时间
 	 */
@@ -118,11 +122,11 @@ public class User extends Super<User> {
 		this.password = password;
 	}
 	
-	public Integer getNumber () {
+	public String getNumber () {
 		return number;
 	}
 	
-	public void setNumber (Integer number) {
+	public void setNumber (String number) {
 		this.number = number;
 	}
 	
@@ -134,6 +138,14 @@ public class User extends Super<User> {
 		this.type = type;
 	}
 	
+	public String getAvatar () {
+		return avatar;
+	}
+	
+	public void setAvatar (String avatar) {
+		this.avatar = avatar;
+	}
+	
 	@Override
 	public String toString () {
 		return "User{" +
@@ -141,9 +153,10 @@ public class User extends Super<User> {
 				", password='" + password + '\'' +
 				", salt='" + salt + '\'' +
 				", email='" + email + '\'' +
-				", number=" + number +
+				", number='" + number + '\'' +
 				", type=" + type +
 				", status=" + status +
+				", avatar='" + avatar + '\'' +
 				", createTime=" + createTime +
 				", updateTime=" + updateTime +
 				'}';
