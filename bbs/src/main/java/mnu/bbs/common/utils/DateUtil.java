@@ -1,5 +1,6 @@
 package mnu.bbs.common.utils;
 
+import java.time.LocalDateTime;
 import java.util.Calendar;
 
 /**
@@ -8,26 +9,35 @@ import java.util.Calendar;
 * Description 获取日期时间工具类
 */
 public class DateUtil {
-
+    private static LocalDateTime date = LocalDateTime.now();
     /**
      * 获取年份
-     * @return
      */
     public static int getYear() {
 
-        Calendar cal = Calendar.getInstance();
-
-        return  cal.get(Calendar.YEAR);
+        return  date.getYear();
     }
 
     /**
      * 获取日期
-     * @return
      */
     public static int getMonth() {
-        Calendar cal = Calendar.getInstance();
-
-        return  cal.get(Calendar.MONTH)+1;
+        return  date.getMonth().getValue();
     }
-
+    /**
+     * 获取星期
+     */
+    public static String getWeek() {
+        int weekValue = date.getDayOfWeek().getValue();
+        switch (weekValue) {
+            case 1: return "一";
+            case 2: return "二";
+            case 3: return "三";
+            case 4: return "四";
+            case 5: return "五";
+            case 6: return "六";
+            case 7: return "天";
+            default: return "?";
+        }
+    }
 }
