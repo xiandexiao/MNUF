@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="shortcut icon" href="../static/images/logo.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="../static/css/detail.css"/>
-    <link rel="stylesheet" href="../static/assets/Cropper/cropper.min.css">
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/detail.css"/>
+    <link rel="stylesheet" href="/assets/Cropper/cropper.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <title>账号管理</title>
 </head>
 <body>
@@ -200,7 +200,7 @@
                 <div class="emailWrap">
                         <div class="item-left">邮箱</div>
                         <div class="item-middle" id="email-item-middle1" >
-                            <span id="current_email" class="email bold">${user.email!"未绑定"}</span><br>
+                            <span id="current_email" class="email bold">${user.email!("未绑定")}</span><br>
                             <span class="grayTip">可通过邮箱找回密码</span>
                         </div>
                         <div class="item-right"><a href="javascript:void(0);" class="linkABlue modify">修改</a></div>
@@ -209,7 +209,7 @@
                     <div class="numberWrap">
                         <div class="item-left">学号</div>
                         <div class="item-middle">
-                            <span id="" class="email bold">${user.number!"未绑定"}</span><br>
+                            <span id="" class="email bold">${user.number!("未绑定")}</span><br>
                             <span class="grayTip">可通过学号获取更多权限</span>
                         </div>
                         <div class="item-right"><a href="javascript:void(0);" class="linkABlue modify">修改</a></div>
@@ -277,8 +277,8 @@
     </div>
 </div>
 </body>
-<script src="../static/js/jquery.min.js"></script>
-<script src="../static/js/bootstrap.min.js"></script>
-<script src="../static/assets/Cropper/cropper.js"></script>
-<script src="../static/js/cropper.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/assets/Cropper/cropper.js"></script>
+<script src="/js/cropper.js"></script>
 </html>

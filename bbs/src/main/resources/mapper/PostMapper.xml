@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mnu.bbs.domain.mapper.PostMapper">
+    <resultMap id="BaseResultMap" type="mnu.bbs.domain.dto.UserPostDto">
+        <result property="userId" column="userId" />
+        <result property="postId" column="postId" />
+        <result property="userName" column="userName" />
+        <result property="userAvatar" column="userAvatar" />
+        <result property="postContent" column="postContent" />
+        <result property="postTitle" column="postTitle" />
+        <result property="postUrl" column="postUrl" />
+        <result property="postVisited" column="postVisited" />
+    </resultMap>
+
+</mapper>

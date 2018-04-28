@@ -5,6 +5,7 @@ package mnu.bbs.domain.entity;
 
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.enums.FieldFill;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.Date;
 
@@ -36,13 +37,9 @@ public class User extends Super<User> {
 	 */
 	private String number;
 	/**
-	 * 账号类型 0:学号 1:邮箱
-	 */
-	private Integer type;
-	/**
 	 * 用户状态：0 禁用 1 正常
 	 */
-	private Integer status;
+	private String status;
 	/**
 	 * 头像:地址
 	 */
@@ -51,6 +48,7 @@ public class User extends Super<User> {
 	 * 创建时间
 	 */
 	@TableField( fill = FieldFill.INSERT)
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
 	private Date createTime;
 	/**
 	 * 修改时间
@@ -90,11 +88,11 @@ public class User extends Super<User> {
 		this.email = email;
 	}
 	
-	public Integer getStatus () {
+	public String getStatus () {
 		return status;
 	}
 	
-	public void setStatus (Integer status) {
+	public void setStatus (String status) {
 		this.status = status;
 	}
 	
@@ -130,13 +128,6 @@ public class User extends Super<User> {
 		this.number = number;
 	}
 	
-	public Integer getType () {
-		return type;
-	}
-	
-	public void setType (Integer type) {
-		this.type = type;
-	}
 	
 	public String getAvatar () {
 		return avatar;
@@ -154,7 +145,6 @@ public class User extends Super<User> {
 				", salt='" + salt + '\'' +
 				", email='" + email + '\'' +
 				", number='" + number + '\'' +
-				", type=" + type +
 				", status=" + status +
 				", avatar='" + avatar + '\'' +
 				", createTime=" + createTime +

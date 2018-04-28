@@ -1,0 +1,273 @@
+@media screen and (max-width: 1200px){
+    .col-0{
+        display: none;
+    }
+}
+
+a img { border: none; }
+label { cursor: pointer; }
+blockquote{margin:0;text-indent:40px;}
+
+
+
+
+
+
+
+/*轮播*/
+#myCarousel {
+    height: 297px;
+    width: 100%;
+    overflow: hidden;
+}
+
+#poster {
+    padding: 16px;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    moz-box-shadow: 0 0 4px #cecccc;
+    -webkit-box-shadow: 0 0 4px #cecccc;
+    box-shadow: 0 0 4px #cecccc;
+    overflow: hidden;
+}
+
+#index-right {
+    border: 1px solid #e6e6e6;
+    padding-top: 12px;
+    padding-bottom: 15px;
+    background-color: #fff;
+    moz-box-shadow: 3px 3px 4px #cecccc;
+    -webkit-box-shadow: 0 0 0 #cecccc;
+    box-shadow: 3px 0 4px #cecccc;
+}
+
+#index-right .check_in {
+    position: relative;
+    margin: 0;
+    background-color: #43b56b;
+    border: 1px solid #e3e5e6;
+}
+#index-right .check_in span {
+    display: inline-block;
+    width: 6px;
+    height: 8px;
+    background-color: #fff;
+    position: absolute;
+}
+#index-right .check_in .item-1 {
+    left: 46px;
+    top: 8px;
+}
+#index-right .check_in .item-2 {
+    left: 76px;
+    top: 8px;
+}
+#index-right .check_in_week {
+    display: inline-block;
+    width: 80px;
+    height: 35px;
+    margin: 15px 5px 15px 8px;
+    background-color: #FFF;
+    color: #000000;
+    text-align: center;
+    line-height: 38px;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+#index-right .check_in a {
+    font-size: 17px;
+    color: #FFF;
+}
+#check_in_status {
+    position: absolute;
+    top: 20px;
+    left: 0;
+}
+.mtop20 {
+    margin-top: 20px;
+}
+
+.hot-thread .hot-header {
+    background-color: #fff;
+    padding: 18px 15px;
+    border: 1px solid #e6e6e6;
+    box-shadow: 1px 1px 10px #e2e2e2;
+}
+.hot-header .header-info li {
+    font-size: 10px;
+
+}
+.hot-header .header-info p{
+    display: inline-block;
+}
+
+.hot-thread .hot-list {
+    padding: 30px 0 0 20px;
+    background-color: #FFF;
+    border: 1px solid #e6e6e6;
+    border-top: none;
+    box-shadow: 1px 1px 10px #e2e2e2;
+}
+.hot-thread .hot-list table tr {
+    width: 100%;
+}
+.hot-thread .hot-list table td {
+    padding-bottom: 20px;
+    vertical-align: top;
+}
+.hot-thread .hot-list table td:first-child {
+    padding-right: 40px;
+}
+.hot-thread .hot-list .thread-td .thread-avatar {
+    width: 34px;
+    height: 34px;
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.hot-thread .hot-list .thread-td .thread-avatar img {
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 22px;
+}
+.thread-title {
+    margin-left: 25px;
+    display: inline-block;
+}
+.thread-title a {
+    display: inline-block;
+    font-size: 14px;
+    color: #333;
+    overflow: hidden;
+    width: 250px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.thread-title .meta-info {
+    overflow: hidden;
+    margin-top: 5px;
+}
+.thread-title .meta-info span {
+    margin-right: 20px;
+    font-size: 12px;
+    color: #999;
+
+}
+.thread-title .meta-info .username {
+    width: 75px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+
+.thread-title .meta-info .info-right .fa {
+    margin-right: 5px;
+}
+.discussion .rt-list {
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    padding: 14px 0 14px 14px;
+    box-shadow: 2px 2px 2px #e2dede;
+}
+
+.rt-list .rt-main {
+    padding: 0 19px;
+    width: 100%;
+    margin-top: 5px;
+    display: block;
+}
+.rt-wrap {
+    padding: 0 0 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+.rt-wrap .rt-title-name {
+    background-color: #0daaea;
+    font-size: 16px;
+    color: #fff;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 9px;
+    display: inline-block;
+}
+
+.rt-href a {
+    color: #333;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 700;
+}
+.rt-meta {
+    margin: 12px 0 10px;
+    overflow: hidden;
+}
+.rt-meta .spfont {
+    font-size: 12px;
+    line-height: 16px;
+    color: #9b9b9b;
+}
+.rt-meta .fa {
+    color: #9b9b9b;
+}
+.rt-meta .spfont a {
+    color: #9b9b9b;
+}
+.rt-meta .alte {
+    float: right;
+}
+.rt-meta .alte a{
+    color: #3AA5EF;
+}
+.discussion .ishare {
+    margin: 5px 0;
+}
+.hot-area {
+    overflow: hidden;
+    margin-top: 35px;
+}
+.hot-area p.r-title {
+    color: #333;
+    height: 50px;
+    line-height: 50px;
+    padding-bottom: 0;
+    padding-top: 0;
+    text-align: center;
+    font-size: 14px;
+    background-color: #fcfcfc;
+    border-width: 2px 1px 0;
+    border-style: solid;
+    border-color: #00c3f5 #eee transparent;
+}
+
+.hot-area table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.hot-area td {
+    width: 50%;
+    text-align: center;
+    font-family: Microsoft Yahei;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #eee;
+    background-color: #fcfcfc;
+}
+.hot-area .odd td {
+    background-color: #f7f7f7;
+}
+.hot-area a {
+    display: inline-block;
+    padding: 15px 0;
+    width: 100%;
+}
+.hot-area a:hover {
+    color: #3AA5EF;
+}

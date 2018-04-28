@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/main.css"/>
+    <link rel="stylesheet" href="/fonts/css/font-awesome.min.css"/>
+
+    <title>MNUF-校园交流平台</title>
+    <style>
+        body {
+            background-color: #F2F2F2;
+        }
+    </style>
+</head>
+<body>
+<div class="loding">
+    <div class="pic">
+        <span class="rotate"></span>
+        <b class="loding-text">0%</b>
+    </div>
+</div>
+<div class="comtainer">
+    <div href="javascript:;" id="go-top"></div>
+    <nav id="nav-header" class="navbar navbar-default navbar-fixed-top " role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bbs-navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand" target="_blank"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="bbs-navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">我的校园</a></li>
+                    <li><a href="#">教务系统</a></li>
+                    <li><a href="#">学工部</a></li>
+                    <li><a href="#">全部板块</a></li>
+                    <li id="empty">
+
+                    </li>
+
+                </ul>
+                <div class="login-box col-0" id="cust">
+                    <div class="loginArea" style="position: relative">
+                        <div class="log-img-box">
+                            <img src='/avatar/${user.avatar}' style="border-radius: 15px;width: 100%;height: 100%;"/>
+                            <ul class="log-dropdown">
+                                <li><a class="actmanage_mzcust" href="/detail">我的账户</a></li>
+                                <li><a href="/home">我的动态</a></li>
+                                <li><a href="/forum">我的帖子</a></li>
+                                <li><a href="/home">我的好友</a></li>
+                                <li><a href="/home" id="pm_ntc">我的消息</a></li>
+                                <li><a href="/home">个人设置</a></li>
+                                <li><a class="logout_mzcust" id="mzLogout" href="/logout">退出账户</a></li>
+                            </ul>
+                        </div>
+                       <!-- <div class="not-login-block-sub" style="padding-bottom: 20px; top: 60px; border-right: 1px solid rgb(229, 229, 229); border-bottom: 1px solid rgb(229, 229, 229); border-left: 1px solid rgb(229, 229, 229); border-image: initial; border-top: none;">
+                            <p><a  class="u-btn" href="/login">立即登录</a></p>
+                            <p>没有账号？<a href="/register" style="color: #3AA5EF">立即注册</a></p>
+                            <p class="tips-text">
+                                <span class="line"></span>
+                                <span class="txt">其他方式登录</span>
+                            </p>
+                            <p class="other-login">
+                                <a href="/wechat" class="wechat">
+                                    <i class="fa fa-wechat fa-2x">&nbsp;&nbsp;&nbsp;</i>
+                                </a>
+
+                                <a href="/wechat" class="qq">
+                                    <i class="fa fa-qq fa-2x"></i>
+                                </a>
+                            </p>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <div class="wp">
+        <div id="row">
+            <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                <div>
+                    <ul class="nav navbar-nav navbar-left">
+                        <li class="first active"><a href="/" style="color: #3AA5EF">首页</a></li>
+                        <li>
+                            <a href="/forum-22-1.html" target="_blank">综合讨论</a>
+                        </li>
+                        <li>
+                            <a href="/forum-149-1.html" target="_blank">我的校园</a>
+                        </li>
+                        <li>
+                            <a href="/forum-144-1.html" target="_blank">学工部</a>
+                        </li>
+                        <li>
+                            <a href="http://myj.meizu.com/" target="_blank">教务系统</a>
+                        </li>
+                        <li>
+                            <a href="https://bbs.meizu.cn/photo" target="_blank">摄影天地</a>
+                        </li>
+                        <li>
+                            <a href="/forum.php" target="_blank" id="all-block">全部版块</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <form class="navbar-form navbar-right" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control search" placeholder="Search"/>
+                            <a href="#" class=""></a>
+                        </div>
+                    </form>
+                </div>
+                <div class="bbs-blocks">
+                    <i class="block-arrow" ></i>
+                    <table class="table-item">
+                        <tbody><tr>
+                            <td>
+                                <dl class="block-item">
+                                    <dt class="blueitem"> <i class="fa fa-mortar-board" style="color: #3AA5EF;"></i>&nbsp;&nbsp;校园信息</dt>
+                                    <dd><a target="_blank" href="/forum-22-1.html">我的校园</a></dd>
+                                    <dd><a target="_blank" href="/forum-149-1.html">学工部</a></dd>
+                                    <dd><a target="_blank" href="/forum-144-1.html">教务系统</a></dd>
+                                </dl>
+                            </td>
+                            <td>
+                                <dl class="block-item">
+                                    <dt class="greenitem"> <i class="fa fa-envira" style="color:green;"></i>&nbsp;&nbsp;知识海岸</dt>
+                                    <dd><a target="_blank" href="//bbs.meizu.cn/wan">学习交流</a></dd>
+                                    <dd><a target="_blank" href="/forum-62-1.html">资源分享</a></dd>
+                                </dl>
+                            </td>
+                            <td>
+                                <dl class="block-item">
+                                    <dt class="yellowitem"> <i class="fa fa-camera" style="color: orange"></i>&nbsp;&nbsp;社区生活</dt>
+                                    <dd><a target="_blank" href="/forum-10-1.html">谈天说地</a></dd>
+                                    <dd><a target="_blank" href="/forum-20-1.html">二手交易</a></dd>
+                                    <dd><a target="_blank" href="/forum-84-1.html">摄影天地</a></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-6 col-sm-12 col-xs-12" id="poster">
+                <div id="myCarousel" class="carousel slide">
+                        <!-- 轮播（Carousel）指标 -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <!-- 轮播（Carousel）项目 -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="/images/cover.jpg" alt="First slide" width="100%" height="100%"/>
+                            </div>
+                            <div class="item">
+                                <img src="/images/p1.jpg" alt="Second slide" width="100%" height="100%"/>
+                            </div>
+                            <div class="item">
+                                <img src="/images/bg.jpg" alt="Third slide" width="100%" height="100%"/>
+                            </div>
+                        </div>
+
+                    </div>
+            </div>
+            <div class="col-md-2 col-0" id="index-right">
+                <div class="row check_in">
+                    <div class="col-md-8">
+                        <span class="item-1"></span>
+                        <span class="item-2"></span>
+                        <div class="check_in_week">星期${week}</div>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="check_in_status"><a href="#">签到</a></div>
+                    </div>
+                </div>
+
+                <!--hot area-->
+                <div class="hot-area">
+                    <p class="r-title">热门板块</p>
+                    <div class="remove-border">
+                        <table width="100%" >
+                            <tbody>
+                            <tr class="odd">
+                                <td><a target="_blank" href="//bbs.meizu.cn/forum-22-1.html">综合讨论</a></td>
+                                <td><a target="_blank" href="//bbs.meizu.cn/forum-149-1.html">资源分享</a></td>
+                            </tr>
+                            <tr>
+                                <td><a target="_blank" href="//bbs.meizu.cn/forum-144-1.html">二手交易</a></td>
+                                <td><a target="_blank" href="//bbs.meizu.cn/forum-62-1.html">摄影天地</a></td>
+                            </tr>
+
+                            <tr class="odd">
+                                <td><a target="_blank" href="http://bbs.flyme.cn/">学习交流</a></td>
+                                <td><a target="_blank" href="http://gamebbs.meizu.com">说天说地</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--hot thread-->
+        <div class="hot-thread mtop20">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8 hot-header">
+                    <!--hot header-->
+                    <div class="row">
+                        <div class="col-md-5">
+                            <h4>社区热帖</h4>
+                        </div>
+                        <div class="col-md-7 header-info">
+                            <ul class="list-inline text-right">
+                                <li><p>今日发帖:&nbsp;</p><span class="num">111111</span></li>
+                                <li>&brvbar;</li>
+                                <li><p>历史最高:&nbsp;</p><span class="num">111</span></li>
+                                <li>&brvbar;</li>
+                                <li><p>会员:&nbsp;</p><span class="num">111</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--hot list-->
+            <div class="row">
+                <!--遍历社区热帖-->
+                <div class="col-md-offset-2 col-md-8 hot-list">
+                    <table width="100%">
+                        <tbody id="list-content">
+                            <tr>
+                                <td>
+                                    <!--comment ceil-->
+                                    <div class="thread-td">
+                                        <a href="javascript:;" class="thread-avatar">
+                                            <img src="/images/admin.jpeg"   style="cursor: pointer;"/>
+                                        </a>
+                                        <div class="thread-title">
+                                            <a class="t-title" target="_blank" href="/detail-post/">这是一个标题这是一个标题</a>
+                                            <div class="meta-info">
+                                                <span class="username">admin</span>
+                                                <span class="info-right"><i class="fa fa-eye"></i>11</span>
+                                                <span class="info-right"><i class="fa fa-comment"></i>11</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="thread-td">
+                                        <a href="javascript:;" class="thread-avatar">
+                                            <img src="/images/admin.jpeg"  style="cursor: pointer;"/>
+                                        </a>
+                                        <div class="thread-title">
+                                            <a class="t-title" target="_blank" href="/detail-post/">这是一个标题这是一个标题</a>
+                                            <div class="meta-info">
+                                                <span class="username">admin</span>
+                                                <span class="info-right"><i class="fa fa-eye"></i>11</span>
+                                                <span class="info-right"><i class="fa fa-comment"></i>11</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="discussion mtop20">
+            <#list posts as post>
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-8">
+                        <dl class="row rt-list">
+                            <div class="col-md-4">
+                                <dt class="rt-img">
+                                    <a href="/detail-post/${post.postId}" target="_blank" class="is_image">
+                                        <img width="100%" height="100%" class="lazy"  src="/post/${post.postUrl!('lantern.jpg')}" style="display: inline;"/>
+                                    </a>
+                                </dt>
+                            </div>
+                            <div class="col-md-8">
+                                <dd class="rt-main">
+                                    <div class="rt-wrap">
+                                        <p class="rt-title-name">${post.postType!("综合讨论")}</p>
+                                    </div>
+                                    <p class="rt-href">
+                                        <a class="rth" target="_blank" href="/detail-post/${post.postId}" title="「第${week!('某')}期」${post.postTitle!('未知标题')}">「第${week!('某')}期」${post.postTitle!('未知标题')}</a>
+                                    </p>
+                                    <div class="rt-meta">
+                                        <i class="fa fa-eye" style="margin:0 4px 0 0;"></i>
+                                        <span class="spfont">${post.postVisited}</span>
+                                        <i class="fa fa-comment" style="margin:0 4px 0 20px;"></i>
+                                        <span class="spfont">${post.commentCount}</span>
+
+                                        <span class="spfont" style="margin:0 0 0 20px;">/ <a href="#">${post.userName!('外星人')}</a></span>
+                                        <span class="spfont" style="margin:0 0 0 20px;">/ <span title="${(post.createTime?string('yyyy-MM-dd HH:mm:ss'))!('不知')}">${(post.createTime?string('MM月dd日 HH时mm分'))!('xx时xx分')}</span></span>
+                                        <span class="spfont alte"><a target="_blank" href="/detail-post/${post.postId}">阅读全文</a></span>
+                                    </div>
+                                    <div class="content">
+                                        ${post.postContent!('啦啦啦啦啦~~~~~啦啦啦~~')}
+                                    </div>
+                                    <div class="ishare" style="font-size: 12px">
+                                        分享到：
+                                        <a class="bds_tsina" href="http://service.weibo.com/share/share.php?appkey=439445218&amp;title=「第${week!('某')}期」${post.postTitle}&amp;url=localhost:8080/detail-post/${post.postId}&amp;pic=localhost:8080/post/${post.postUrl}" target="_blank">
+                                            <i class="fa fa-weibo"></i>
+                                        </a>
+                                        &nbsp;
+                                        <a class="bds_tsina" href="http://service.weibo.com/share/share.php?appkey=439445218&amp;title=「第36期」魅族读书会 · 人间至味是春光&amp;url=https://bbs.meizu.cn/thread-6822365-1-1.html&amp;pic=https://bbsimage.res.meizu.com/recommend/2018/03/29/115504wjuzu9r9r819361s.jpg" target="_blank">
+                                            <i class="fa fa-wechat"></i>
+                                        </a>
+                                        &nbsp;
+                                        <a class="bds_tsina" href="http://service.weibo.com/share/share.php?appkey=439445218&amp;title=「第36期」魅族读书会 · 人间至味是春光&amp;url=https://bbs.meizu.cn/thread-6822365-1-1.html&amp;pic=https://bbsimage.res.meizu.com/recommend/2018/03/29/115504wjuzu9r9r819361s.jpg" target="_blank">
+                                            <i class="fa fa-qq"></i>
+                                        </a>
+                                    </div>
+                                </dd>
+                            </div>
+
+                        </dl>
+                    </div>
+                </div>
+            </#list>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/common.js"></script>
+<script>
+    function getHotPost() {
+        var $list_content = $("#list-content");
+        $.ajax("/hotPost",{
+            type: "POST",
+            dataType: "json",
+            success: function (data) {
+                $list_content.empty();
+                if (data.length != 0) {
+                    for (var obj in data) {
+                        var userId = data[obj].userId;
+                        var userName = data[obj].userName;
+                        var userAvatar = data[obj].userAvatar;
+                        var postId = data[obj].postId;
+                        var postTitle = data[obj].postTitle;
+                        var postVisited = data[obj].postVisited;
+                        var commentCount = data[obj].commentCount;
+                        if (obj % 2 === 0) {
+                            var str = '#' + obj;
+                            console.log(str);
+                            $list_content.append("<tr id='"+obj+"'></tr>");
+                            $(str).append("<td>\n" +
+                                "                                    \n" +
+                                "                                    <div class=\"thread-td\">\n" +
+                                "                                        <a href=\"javascript:;\" class=\"thread-avatar\">\n" +
+                                "                                            <img src=\"/avatar/"+userAvatar+"\"   style=\"cursor: pointer;\"/>\n" +
+                                "                                        </a>\n" +
+                                "                                        <div class=\"thread-title\">\n" +
+                                "                                            <a class=\"t-title\" target=\"_blank\" href=\"/detail-post/"+postId+"\">"+postTitle+"</a>\n" +
+                                "                                            <div class=\"meta-info\">\n" +
+                                "                                                <span class=\"username\">"+userName+"</span>\n" +
+                                "                                                <span class=\"info-right\"><i class=\"fa fa-eye\"></i>"+postVisited+"</span>\n" +
+                                "                                                <span class=\"info-right\"><i class=\"fa fa-comment\"></i>"+commentCount+"</span>\n" +
+                                "                                            </div>\n" +
+                                "                                        </div>\n" +
+                                "                                    </div>\n" +
+                                "\n" +
+                                "                                </td>")
+                        } else {
+                            str = '#' + (obj - 1);
+                            $(str).append("<td>\n" +
+                                "                                    <div class=\"thread-td\">\n" +
+                                "                                        <a href=\"javascript:;\" class=\"thread-avatar\">\n" +
+                                "                                            <img src=\"/avatar/"+userAvatar+"\"  style=\"cursor: pointer;\"/>\n" +
+                                "                                        </a>\n" +
+                                "                                        <div class=\"thread-title\">\n" +
+                                "                                            <a class=\"t-title\" target=\"_blank\" href=\"/detail-post/"+postId+"\">"+postTitle+"</a>\n" +
+                                "                                            <div class=\"meta-info\">\n" +
+                                "                                                <span class=\"username\">"+userName+"</span>\n" +
+                                "                                                <span class=\"info-right\"><i class=\"fa fa-eye\"></i>"+postVisited+"</span>\n" +
+                                "                                                <span class=\"info-right\"><i class=\"fa fa-comment\"></i>"+commentCount+"</span>\n" +
+                                "                                            </div>\n" +
+                                "                                        </div>\n" +
+                                "                                    </div>\n" +
+                                "                                </td>")
+                        }
+                    }
+
+                }
+
+            }
+        });
+    }
+    window.onload = function () {
+        getHotPost();
+        //调节轮播切换的速度
+        $('#myCarousel').carousel({
+            interval: 3000
+        });
+
+        //调整poster的高度
+        var index_right_height = $("#index-right").height();
+        $("#poster").height(index_right_height - 4);
+        window.onresize = function () {
+            index_right_height = $("#index-right").height();
+            $("#poster").height(index_right_height - 4);
+        };
+    };
+</script>
+</body>
+</html>

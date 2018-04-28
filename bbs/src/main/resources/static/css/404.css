@@ -1,0 +1,14 @@
+
+.container-fluid {
+    padding-right: 150px;
+    padding-left: 150px;
+}
+.container img {
+    display: block;
+    margin: 0 auto;
+}
+.container .message p {
+    margin-top: 50px;
+    color: #FFF;
+    text-align: center;
+}

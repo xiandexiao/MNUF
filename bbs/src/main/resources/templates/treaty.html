@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../static/css/common.css"/>
+    <link rel="stylesheet" href="../static/css/404.css"/>
+    <script src="../static/js/jquery.min.js" ></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <title>Treaty</title>
+    <style>
+        /* Custom Styles */
+        .container ul li {
+            text-indent: 25px;
+        }
+        ul.nav-tabs{
+            width: 140px;
+            margin-top: 20px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+        }
+        ul.nav-tabs li{
+            margin: 0;
+            border-top: 1px solid #ddd;
+        }
+        ul.nav-tabs li:first-child{
+            border-top: none;
+        }
+        ul.nav-tabs li a{
+            margin: 0;
+            padding: 8px 16px;
+            border-radius: 0;
+        }
+        ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
+            color: #fff;
+            background: #0088cc;
+            border: 1px solid #0088cc;
+        }
+        ul.nav-tabs li:first-child a{
+            border-radius: 4px 4px 0 0;
+        }
+        ul.nav-tabs li:last-child a{
+            border-radius: 0 0 4px 4px;
+        }
+        ul.nav-tabs.affix{
+            top: 30px; /* Set the top position of pinned element */
+        }
+        p,h4 {
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 14px;
+            line-height: 2;
+        }
+        h4 {
+            font-weight: 600;
+        }
+        .loading {
+            width:100%;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 100;
+            background-color: #E6E6E6;
+        }
+        .pic {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+        .pic i {
+            animation: load 1.2s infinite;
+            display: block;
+            height: 50px;
+            width: 6px;
+            float: left;
+            margin: 0 2px;
+            background-color: #3AA5EF;
+            transform: scaleY(0.4); //x 不变，y缩放
+        }
+        .pic i:nth-child(2){animation-delay: 0.1s}
+        .pic i:nth-child(3){animation-delay: 0.2s}
+        .pic i:nth-child(4){animation-delay: 0.3s}
+        .pic i:nth-child(5){animation-delay: 0.5s}
+        @keyframes load {
+            0%,40%,100%{transform: scaleY(0.4)}
+            20%{transform: scaleY(1)}
+        }
+    </style>
+</head>
+<div class="loading">
+    <div class="pic">
+    <i></i><i></i><i></i><i></i><i></i>
+    </div>
+</div>
+<body data-spy="scroll" data-target="#myScrollspy">
+<nav id="nav-header" class="navbar navbar-default " role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#404-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a  href="index.html" class="navbar-brand" target="_self" style="background-image: url('../static/images/brand-1.png')"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="404-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">登录</a></li>
+                <li><a href="#">注册</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+<div class="container">
+    <div href="javascript:;" id="go-top"></div>
+    <div class="row">
+        <div class="col-xs-3" id="myScrollspy">
+            <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125">
+                <li class="active"><a href="#section-1">使用规则</a></li>
+                <li><a href="#section-2">个人隐私</a></li>
+                <li><a href="#section-3">侵权举报</a></li>
+                <li><a href="#section-4">免责申明</a></li>
+                <li><a href="#section-5">协议修改</a></li>
+            </ul>
+        </div>
+        <div class="col-xs-9">
+            <h4>绵阳师范社区协议</h4>
+            <p>欢迎来到绵阳师范社区。以下简称MNUF</p>
+            <p>
+                请您仔细阅读以下条款，如果您对本协议的任何条款表示异议，您可以选择不进入MNUF。当您注册成功，无论是进入MNUF，还是在MNUF上发布任何内容（即「内容」），均意味着您（即「用户」）完全接受本协议项下的全部条款。
+                
+            </p>
+            <hr/>
+            <h4 id="section-1">使用规则</h4>
+                <p>1. 用户注册成功后，MNUF将给予每个用户一个用户帐号及相应的密码，该用户帐号和密码由用户负责保管；用户应当对以其用户帐号进行的所有活动和事件负法律责任。</p>
+                <p>2. 用户须对在MNUF的注册信息的真实性、合法性、有效性承担全部责任，用户不得冒充他人；不得利用他人的名义发布任何信息；不得恶意使用注册帐号导致其他用户误认；否则MNUF有权立即停止提供服务，收回其帐号并由用户独自承担由此而产生的一切法律责任。</p>
+                <p>3. 用户直接或通过各类方式（如 RSS 源和站外 API 引用等）间接使用MNUF服务和数据的行为，都将被视作已无条件接受本协议全部内容；若用户对本协议的任何条款存在异议，请停止使用MNUF所提供的全部服务。</p>
+                <p>4. MNUF是一个信息分享、传播及获取的平台，用户通过MNUF发表的信息为公开的信息，其他第三方均可以通过MNUF获取用户发表的信息，用户对任何信息的发表即认可该信息为公开的信息，并单独对此行为承担法律责任；任何用户不愿被其他第三人获知的信息都不应该在MNUF上进行发表。</p>
+                <p>5. 用户承诺不得以任何方式利用MNUF直接或间接从事违反中国法律以及社会公德的行为，MNUF有权对违反上述承诺的内容予以删除。</p>
+                <div>
+                    <p>6. 用户不得利用MNUF服务制作、上载、复制、发布、传播或者转载如下内容：</p>
+                    <ul>
+                        <li>(1) 反对宪法所确定的基本原则的；</li>
+                        <li>(2) 危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；</li>
+                        <li>(3) 损害国家荣誉和利益的；</li>
+                        <li>(4) 煽动民族仇恨、民族歧视，破坏民族团结的；</li>
+                        <li>(5) 破坏国家宗教政策，宣扬邪教和封建迷信的；</li>
+                        <li>(6) 散布谣言，扰乱社会秩序，破坏社会稳定的；</li>
+                        <li>(7) 散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；</li>
+                        <li>(8) 侮辱或者诽谤他人，侵害他人合法权益的；</li>
+                        <li>(9) 含有法律、行政法规禁止的其他内容的信息。</li>
+                    </ul>
+                </div>
+                <p>7. MNUF有权对用户使用MNUF的情况进行审查和监督，如用户在使用MNUF时违反任何上述规定，MNUF或其授权的人有权要求用户改正或直接采取一切必要的措施（包括但不限于更改或删除用户张贴的内容、暂停或终止用户使用MNUF的权利）以减轻用户不当行为造成的影响。</p>
+            <hr/>
+            <h4 id="section-2">个人隐私</h4>
+            <p>尊重用户个人隐私信息的私有性是MNUF的一贯原则，MNUF将通过技术手段、强化内部管理等办法充分保护用户的个人隐私信息，除法律或有法律赋予权限的政府部门要求或事先得到用户明确授权等原因外，MNUF保证不对外公开或向第三方透露用户个人隐私信息，或用户在使用服务时存储的非公开内容。同时，为了运营和改善MNUF的技术与服务，MNUF将可能会自行收集使用或向第三方提供用户的非个人隐私信息，这将有助于MNUF向用户提供更好的用户体验和服务质量。</p>
+            <hr/>
+            <h4 id="section-3">侵权举报</h4>
+            <p>MNUF作为知识讨论社区，高度重视自由表达和个人、企业正当权利的平衡。依照法律规定删除违法信息是MNUF社区的法定义务，MNUF社区亦未与任何中介机构合作开展此项业务。</p>
+            <hr/>
+            <h4 id="section-4">免责申明</h4>
+                <p>1. MNUF不能对用户发表的回答或评论的正确性进行保证。</p>
+                <p>2. 用户在MNUF发表的内容仅表明其个人的立场和观点，并不代表MNUF的立场或观点。作为内容的发表者，需自行对所发表内容负责，因所发表内容引发的一切纠纷，由该内容的发表者承担全部法律及连带责任。MNUF不承担任何法律及连带责任。</p>
+                <p>3. MNUF不保证网络服务一定能满足用户的要求，也不保证网络服务不会中断，对网络服务的及时性、安全性、准确性也都不作保证。</p>
+                <p>4. 对于因不可抗力或MNUF不能控制的原因造成的网络服务中断或其它缺陷，MNUF不承担任何责任，但将尽力减少因此而给用户造成的损失和影响。</p>
+            <hr/>
+            <h4 id="section-5">协议修改</h4>
+                <p>1. 根据互联网的发展和有关法律、法规及规范性文件的变化，或者因业务发展需要，MNUF有权对本协议的条款作出修改或变更，一旦本协议的内容发生变动，MNUF将会直接在MNUF网站上公布修改之后的协议内容，该公布行为视为MNUF已经通知用户修改内容。MNUF也可采用电子邮件或私信的传送方式，提示用户协议条款的修改、服务变更、或其它重要事项。</p>
+                <p>2. 如果不同意MNUF对本协议相关条款所做的修改，用户有权并应当停止使用MNUF。如果用户继续使用MNUF，则视为用户接受MNUF对本协议相关条款所做的修改。</p>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="../static/js/common.js"></script>
+<script>
+    document.onreadystatechange = function () {
+        if (document.readyState === "complete") {
+            document.querySelector(".loading").style.display="none";
+        }
+    }
+</script>
+</html>

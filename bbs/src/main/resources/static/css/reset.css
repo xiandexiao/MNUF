@@ -1,0 +1,14 @@
+* { word-wrap: break-word; word-break:break-all;}
+body { background: #FFF;}
+body, input, button, select, textarea { font-size: 14px ; font-family:"Microsoft Yahei",Tahoma,'Simsun',Arial,Helvetica,sans-serif; color: #515151; outline:none;}
+textarea { resize: none; }
+body, ul, ol, li, dl, dd, p, h1, h2, h3, h4, h5, h6, form, fieldset, hr{ margin: 0; padding: 0; outline:none;}
+caption, th { text-align: left; font-weight: 400; }
+ul li, .xl li { list-style: none; }
+a:hover {color: #515151;outline:none;text-decoration: none!important;}
+a:visited {color: #222222;outline:none;text-decoration: none}
+a:active{color: #222222;outline:none;text-decoration: none}
+a:link{color: #222222;outline:none;text-decoration: none}
+.clear:after{ content:""; height:0; line-height:0; display:block; visibility:hidden; clear:both;}
+.clearfix{zoom:1;}
+.clear{content:""; height:0; line-height:0; display:block; visibility:hidden; clear:both;}

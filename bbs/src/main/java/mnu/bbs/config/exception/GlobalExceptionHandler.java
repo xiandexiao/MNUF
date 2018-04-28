@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 public class GlobalExceptionHandler {
 	@ExceptionHandler(value = org.apache.shiro.authz.UnauthorizedException.class)
 	public ModelAndView defaultErrorHandler(HttpServletRequest request, HttpServletResponse response, Exception e) throws Exception {
-		response.sendRedirect("/500");
+		response.sendRedirect("/500.html");
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("exception", e);
 		mav.addObject("url", request.getRequestURL());

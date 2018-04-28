@@ -42,11 +42,11 @@ public class ShiroConfig {
 		shiroFilterFactoryBean.setSecurityManager(securityManager);
 		
 		// 登陆页面
-		shiroFilterFactoryBean.setLoginUrl("/login.html");
+		shiroFilterFactoryBean.setLoginUrl("/login");
 		// 登录成功后要跳转的链接
 		shiroFilterFactoryBean.setSuccessUrl("/index");
 		// 未授权界面
-		shiroFilterFactoryBean.setUnauthorizedUrl("/500.html");
+		shiroFilterFactoryBean.setUnauthorizedUrl("/403");
 		
 		// 拦截器.
 		Map<String,String> filterChainDefinitionMap = new LinkedHashMap<String,String>();
@@ -62,15 +62,15 @@ public class ShiroConfig {
 		filterChainDefinitionMap.put("/avatar/**", "anon");
 		filterChainDefinitionMap.put("/js/**", "anon");
 		filterChainDefinitionMap.put("/particles.json", "anon");
-		filterChainDefinitionMap.put("/500.html", "perms");
+		filterChainDefinitionMap.put("/500.html", "anon");
 		filterChainDefinitionMap.put("/404.html", "anon");
 		filterChainDefinitionMap.put("/mylogin", "anon");
-		filterChainDefinitionMap.put("/detail", "user");
 		filterChainDefinitionMap.put("/register.html", "anon"); // 注册界面
 		filterChainDefinitionMap.put("/register", "anon"); // 注册提交数据
-		filterChainDefinitionMap.put("/sencCode", "anon"); // 发送邮箱验证码
-		filterChainDefinitionMap.put("/isUsername/**", "anon"); // 判断用户名是否存在
-		filterChainDefinitionMap.put("/isEmail/**", "anon"); // 判断邮箱是否存在
+		filterChainDefinitionMap.put("/sendCode", "anon"); // 发送邮箱验证码
+		filterChainDefinitionMap.put("/isUsername", "anon"); // 判断用户名是否存在
+		filterChainDefinitionMap.put("/isEmail", "anon"); // 判断邮箱是否存在
+		filterChainDefinitionMap.put("/isNumber", "anon"); // 判断学号是否存在
 		
 		filterChainDefinitionMap.put("/**", "authc");
 		/**

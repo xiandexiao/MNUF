@@ -4,7 +4,10 @@
 package mnu.bbs.domain.service;
 
 import com.baomidou.mybatisplus.service.IService;
+import mnu.bbs.domain.dto.UserActivityDto;
 import mnu.bbs.domain.entity.User;
+
+import java.util.List;
 
 /**
  * @author xian
@@ -25,4 +28,8 @@ public interface IUserService extends IService<User> {
 	String selectEmail(Integer id,String value);
 	
 	boolean updatePassword(Integer id,String value);
+	
+	List<User> selectTodayUser();
+	
+	List<UserActivityDto> selectUserActivity(Integer id);
 }

@@ -57,7 +57,6 @@ public class DruidConfig {
 		datasource.setMinIdle(minIdle);
 		datasource.setMaxActive(maxActive);
 		datasource.setMaxWait(maxWait);
-		
 		return datasource;
 	}
 }

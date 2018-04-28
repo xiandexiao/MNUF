@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="../static/js/jquery.min.js" ></script>
+    <script src="../static/js/bootstrap.min.js" ></script>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../static/css/common.css"/>
+    <link rel="stylesheet" href="../static/fonts/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../static/css/thread-header.css"/>
+    <title>photo</title>
+</head>
+<body>
+<div class="loding">
+    <div class="pic">
+        <span class="rotate"></span>
+        <b class="loding-text">0%</b>
+    </div>
+</div>
+<div href="javascript:;" id="go-top"></div>
+<nav id="nav-header" class="navbar navbar-default navbar-fixed-top clear" role="navigation">
+    <div class="container-fluid clear">
+        <div class="navbar-header clear">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bbs-navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a th:href="@{index.html}" href="index.html" class="navbar-brand" target="_blank"></a>
+        </div>
+        <div class="collapse navbar-collapse clear" id="bbs-navbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">我的校园</a></li>
+                <li><a href="#">教务系统</a></li>
+                <li><a href="#">学工部</a></li>
+                <li><a href="#">全部板块</a></li>
+                <li id="empty">
+
+                </li>
+
+            </ul>
+            <div class="login-box clear col-0" id="cust">
+                <div class="loginArea" style="position: relative">
+                    <div class="log-img-box">
+                        <img src="../static/images/no.png" th:src="@{images/no.png}" alt="log" class="user-avatar"/>
+                        <ul class="log-dropdown">
+                            <li><a class="actmanage_mzcust" href="/detail">我的账户</a></li>
+                            <li><a href="/home">我的动态</a></li>
+                            <li><a href="/forum">我的帖子</a></li>
+                            <li><a href="/home">我的好友</a></li>
+                            <li><a href="/home" id="pm_ntc">我的消息</a></li>
+                            <li><a href="/home">个人设置</a></li>
+                            <li><a class="logout_mzcust" id="mzLogout" href="/logout">退出账户</a></li>
+                        </ul>
+                    </div>
+                    <div class="not-login-block-sub" style="padding-bottom: 20px; top: 60px; border-right: 1px solid rgb(229, 229, 229); border-bottom: 1px solid rgb(229, 229, 229); border-left: 1px solid rgb(229, 229, 229); border-image: initial; border-top: none;">
+                        <p><a  class="u-btn" href="/login">立即登录</a></p>
+                        <p>没有账号？<a href="/register" style="color: #3AA5EF">立即注册</a></p>
+                        <p class="tips-text">
+                            <span class="line"></span>
+                            <span class="txt">其他方式登录</span>
+                        </p>
+                        <p class="other-login">
+                            <a href="/wechat" class="wechat">
+                                <i class="fa fa-wechat fa-2x">&nbsp;&nbsp;&nbsp;</i>
+                            </a>
+
+                            <a href="/wechat" class="qq">
+                                <i class="fa fa-qq fa-2x"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</nav>
+<div class="wp">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="first active"><a href="/" style="color: #3AA5EF">首页</a></li>
+                <li>
+                    <a href="/forum-22-1.html" target="_blank">综合讨论</a>
+                </li>
+                <li>
+                    <a href="/forum-149-1.html" target="_blank">我的校园</a>
+                </li>
+                <li>
+                    <a href="/forum-144-1.html" target="_blank">学工部</a>
+                </li>
+                <li>
+                    <a href="http://myj.meizu.com/" target="_blank">教务系统</a>
+                </li>
+                <li>
+                    <a href="https://bbs.meizu.cn/photo" target="_blank">影像馆</a>
+                </li>
+                <li>
+                    <a href="/forum.php" target="_blank" id="all-block">全部版块</a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control search" placeholder="Search"/>
+                    <a href="#" class=""></a>
+                </div>
+            </form>
+            <div class="bbs-blocks">
+                <i class="block-arrow" ></i>
+                <table class="table-item">
+                    <tbody><tr>
+                        <td>
+                            <dl class="block-item">
+                                <dt class="blueitem"> <i class="fa fa-mortar-board" style="color: #3AA5EF;"></i>&nbsp;&nbsp;校园信息</dt>
+                                <dd><a target="_blank" href="/forum-22-1.html">我的校园</a></dd>
+                                <dd><a target="_blank" href="/forum-149-1.html">学工部</a></dd>
+                                <dd><a target="_blank" href="/forum-144-1.html">教务系统</a></dd>
+                            </dl>
+                        </td>
+                        <td>
+                            <dl class="block-item">
+                                <dt class="greenitem"> <i class="fa fa-envira" style="color:green;"></i>&nbsp;&nbsp;知识海岸</dt>
+                                <dd><a target="_blank" href="//bbs.meizu.cn/wan">学习交流</a></dd>
+                                <dd><a target="_blank" href="/forum-62-1.html">资源分享</a></dd>
+                            </dl>
+                        </td>
+                        <td>
+                            <dl class="block-item">
+                                <dt class="yellowitem"> <i class="fa fa-camera" style="color: orange"></i>&nbsp;&nbsp;社区生活</dt>
+                                <dd><a target="_blank" href="/forum-10-1.html">谈天说地</a></dd>
+                                <dd><a target="_blank" href="/forum-20-1.html">二手交易</a></dd>
+                                <dd><a target="_blank" href="/forum-84-1.html">摄影天地</a></dd>
+                            </dl>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+            <div class="thread-list">
+                <div class="thread-header">
+                    <div class="header-content clear">
+                        <span style="margin-right: 30px;">当前版块  : <a style="color: #000" target="_blank" href="forum-20-1.html">二手交易</a></span>
+                        <a href="forum-20-1.html">全部</a>
+                        <span>&brvbar;</span>
+                        <a href="forum.php?mod=forumdisplay&amp;fid=20&amp;filter=digest&amp;digest=1">推荐</a>
+                        <span>&brvbar;</span>
+                        <a href="forum.php?mod=forumdisplay&amp;fid=20&amp;filter=digest&amp;digest=1">热门</a>
+                        <div class="dropdown" style="display: inline-block">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                                主题分类
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">全部分类</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">手机作品</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">相机作品</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">其它</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown" style="display: inline-block">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                                排序方式
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">默认排序</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">发帖时间</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">阅读数</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">热度</a></li>
+                            </ul>
+                        </div>
+                        <a href="javascript:;" class="btn" id="newspecial" onclick="" title="发新帖">发帖</a>
+                    </div>
+                </div>
+                <!-- body -->
+                <div class="bm_c">
+                    <form method="post" autocomplete="off" name="moderate" id="moderate" action="forum.php?mod=topicadmin&amp;action=moderate&amp;fid=84&amp;infloat=yes&amp;nopost=yes">
+                           <table class="table">
+                               <tbody>
+                                    <tr class="hasimage">
+                                        <td class="userhead" width="64">
+                                            <a class="avatar"><img src="https://image-res.mzres.com/img/download/uc/12/46/21/42/80/124621428/w50h50?t=1522647508"/><span class="shadowbox_avatar"> </span></a>
+                                        </td>
+                                    </tr>
+                               </tbody>
+                           </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../static/js/common.js"></script>
+</html>

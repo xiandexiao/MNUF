@@ -27,7 +27,7 @@ public class Post extends Super<Post> {
 	/**
 	 * 贴子类型
 	 */
-	private Integer type;
+	private String type;
 	/**
 	 * 图片地址
 	 */
@@ -40,6 +40,10 @@ public class Post extends Super<Post> {
 	 * 访问量
 	 */
 	private Integer visited;
+	/**
+	 * 评论数量
+	 */
+	private Integer commentCount;
 	/**
 	 * 创建时间
 	 */
@@ -70,11 +74,11 @@ public class Post extends Super<Post> {
 		this.userId = userId;
 	}
 	
-	public Integer getType () {
+	public String getType () {
 		return type;
 	}
 	
-	public void setType (Integer type) {
+	public void setType (String type) {
 		this.type = type;
 	}
 	
@@ -92,6 +96,14 @@ public class Post extends Super<Post> {
 	
 	public void setUrl (String url) {
 		this.url = url;
+	}
+	
+	public Integer getCommentCount () {
+		return commentCount;
+	}
+	
+	public void setCommentCount (Integer commentCount) {
+		this.commentCount = commentCount;
 	}
 	
 	public Integer getVisited () {
@@ -129,6 +141,7 @@ public class Post extends Super<Post> {
 				", visited='" + visited + '\'' +
 				", createTime=" + createTime +
 				", updateTime=" + updateTime +
+				", commentCount=" + commentCount +
 				'}';
 	}
 }

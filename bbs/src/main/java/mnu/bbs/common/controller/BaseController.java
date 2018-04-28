@@ -99,7 +99,7 @@ public class BaseController {
      */
     public User getCurrentUser() {
         Subject currentUser = SecurityUtils.getSubject();
-        User user = currentUser.getPrincipals().oneByType(User.class);
+       User user = currentUser.getPrincipals().oneByType(User.class);
         return user;
     }
     

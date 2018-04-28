@@ -4,6 +4,7 @@
 package mnu.bbs.domain.service.impl;
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import mnu.bbs.domain.dto.UserActivityDto;
 import mnu.bbs.domain.entity.User;
 import mnu.bbs.domain.mapper.UserMapper;
 import mnu.bbs.domain.service.IUserService;
@@ -11,6 +12,8 @@ import org.apache.shiro.crypto.hash.SimpleHash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * @author xian
@@ -51,5 +54,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,User> implements IUs
 		SimpleHash hash = new SimpleHash("MD5",value,salt,1);
 		String password = hash.toString();
 		return userMapper.updatePassword(id,password,salt) > 0;
+	}
+	
+	@Override
+	public List<User> selectTodayUser () {
+		return userMapper.selectTodayUser();
+	}
+	
+	@Override
+	public List<UserActivityDto> selectUserActivity (Integer id) {
+		return userMapper.selectUserActivity(id);
 	}
 }

@@ -5,7 +5,11 @@ package mnu.bbs.domain.controller;
 
 import mnu.bbs.common.controller.BaseController;
 import mnu.bbs.common.result.JsonResult;
+import mnu.bbs.domain.dto.CommentDto;
+import mnu.bbs.domain.dto.TodayPostDto;
+import mnu.bbs.domain.dto.UserPostDto;
 import mnu.bbs.domain.entity.Post;
+import mnu.bbs.domain.service.ICommentService;
 import mnu.bbs.domain.service.IPostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -33,10 +37,13 @@ public class PostController extends BaseController{
 	@Autowired
 	private IPostService postService;
 	
+	@Autowired
+	private ICommentService commentService;
+	
 	@Value("${file-upload-path}")
 	private String fileUploadPath;
 	
-	@GetMapping("/push")
+	@GetMapping("/push-post")
 	public String push(Model model) {
 		model.addAttribute("user",getUpdatedUser());
 		return "/push-post";
@@ -69,12 +76,56 @@ public class PostController extends BaseController{
 			}
 		}
 		Post post = new Post();
-		post.setUserName(getCurrentLoginUsername());
+		post.setUserId(getCurrentLoginId());
 		post.setUrl(UUIDFileName);
 		post.setTitle(title);
 		post.setContent(content);
-		post.setType(0);
+		post.setType("正常");
 		postService.insert(post);
 		return "发布成功";
 	}
+	
+	/**
+	* Author: xian
+	* Date 2018/4/20 14:56
+	* Description 根据贴子ID获取贴子详细内容
+	*/
+	@GetMapping("/detail-post/{id}")
+	public String detailPost(@PathVariable("id") int id,Model model) {
+		//对应用户及贴子的详细信息
+		UserPostDto post = postService.selectPostById (id);
+		model.addAttribute("post",post);
+		model.addAttribute("user",getCurrentUser());
+		//对应贴子下的用户评论信息
+		List<CommentDto> comments = commentService.selectCommentsById(id);
+		model.addAttribute("comments",comments);
+		return "/detail-post";
+	}
+	
+	/**
+	* Author: xian
+	* Date 2018/4/20 14:36
+	* Description 查询今日新增的贴子：id，title，userName,createTime
+	*/
+	@PostMapping("/selectTodayPost")
+	@ResponseBody
+	public List<TodayPostDto> getTodayPost() {
+		List<TodayPostDto> posts = postService.selectTodayPost();
+		return posts;
+	}
+	
+	/**
+	* Author: xian
+	* Date 2018/4/21 15:42
+	* Description 查询所有贴子 包括用户名
+	*/
+	@GetMapping("/post-detail")
+	public String selectAllPost(Model model) {
+		List<UserPostDto> posts = postService.selectAllPost();
+		model.addAttribute("posts",posts);
+		return "/post-detail";
+	}
+	
 }
+
+

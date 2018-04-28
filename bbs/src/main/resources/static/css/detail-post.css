@@ -1,0 +1,357 @@
+#go-top {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 60px;
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    line-height: 999px;
+    overflow: hidden;
+    background: url("../images/scrolltop2.jpg") no-repeat 0 -48px;
+    border: 1px solid #e6e6e6;
+    visibility: visible;
+    box-shadow: 0 0 5px #e6e6e6;
+    z-index: 9999;
+    cursor: pointer;
+}
+#go-top:hover {
+    background: url("../images/scrolltop2.jpg") no-repeat 0 0;
+}
+body{
+    background-color: #E6E6E6;
+}
+.headWrap {
+    position: relative;
+    height: 70px;
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    clear: both;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.headLogo {
+    margin-top: 20px;
+    float: left;
+    margin-right: 60px;
+    display: block;
+    width: 148px;
+    height: 60px;
+    border: none;
+    overflow: hidden;
+}
+
+.headLeft {
+    margin-top: 39px;
+    float: left;
+    z-index: 2;
+    width: 580px;
+    height: 26px;
+    overflow: hidden;
+}
+.headLeft .hidefocus:hover {
+    color: #00aeef;
+}
+
+li.head-store {
+    width: 73px;
+}
+.headLeft li {
+    float: left;
+    height: 24px;
+    position: relative;
+    margin-right: 50px;
+}
+.headLogo  {
+    background: url("../images/brand-1.png") center no-repeat;
+    background-size: 80%;
+}
+
+.headLeft a {
+    font-size: 18px;
+}
+
+.headRight {
+    margin-top: 38px;
+    float: right;
+    width: 210px;
+    text-align: right;
+}
+
+.headRight a {
+    color: #7f7f7f;;
+}
+.headRight a:hover {
+    color: black;
+}
+
+
+
+#ct{
+    min-height: 300px;
+    box-shadow: 0 0 4px #ECECEC;
+    width: 900px;
+    margin: 0 auto;
+}
+
+.wp_postlist {
+    padding: 0 20px;
+    padding-top: 30px;
+    padding-bottom: 25px;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 0 4px #ECECEC;
+}
+.plc, .pls {
+    vertical-align: top;
+    float: left;
+
+}
+.posttitlewrap {
+    position: relative;
+}
+.thread_postlist .head_uinfo {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 70px;
+    height: 70px;
+    margin-top: 8px;
+}
+
+.head_uinfo {
+    float: left;
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    margin-top: 6px;
+}
+
+.thread_postlist .head_uinfo img {
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+}
+.head_uinfo img {
+    width: 44px;
+    height: 44px;
+}
+.avatar img {
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 22px;
+}
+.thread_postlist .head_uinfo .shadowbox_avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+}
+.shadowbox_avatar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: inline-block;
+    box-shadow: inset 0px 0px 1px #DDDDDD;
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+}
+#postlist .posttitle {
+    overflow: hidden;
+    padding: 6px 0px;
+    width: 570px;
+}
+.posttitle, .thread_postlist .infobar_post {
+    margin-left: 90px;
+}
+#postlist .posttitle a {
+    display: block;
+    line-height: 38px;
+    color: #222222;
+    float: left;
+    font-size: 24px;
+}
+
+.thread_postlist .infobar_post {
+    padding-bottom: 31px;
+    width: 570px;
+}
+.thread_postlist .posttitle, .thread_postlist .infobar_post {
+    margin-left: 90px;
+}
+.infobar_post {
+    font-size: 14px;
+    color: #999999;
+    overflow: hidden;
+    padding-bottom: 5px;
+    padding-top: 2px;
+}
+.infobar_post .barr_post {
+    width: auto;
+}
+.barr_post {
+    float: right;
+    height: 20px;
+    width: 285px;
+    padding: 0 5px 0 0;
+}
+.barl_post {
+    float: left;
+    height: 20px;
+    width: 280px;
+}
+.infobar_post .barr_post span, .infobar_post .barr_post em, .infobar_post .barr_post a {
+    float: right;
+}
+.replyicon_uinfo {
+    display: inline-block;
+    margin: 2px 6px 0px 20px;
+    width: 19px;
+    height: 16px;
+    background: url(../images/main_icon.png) no-repeat scroll -91px -602px transparent;
+}
+.readicon_uinfo {
+    display: inline-block;
+    margin: 2px 6px 0px 20px;
+    width: 24px;
+    height: 14px;
+    background: url(../images/main_icon.png) no-repeat scroll 0px -604px transparent;
+}
+.infobar_post a.name_uinfo {
+    display: inline-block;
+    float: left;
+    margin-right: 6px;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    _padding-top: 1px;
+    _width: expression(this.offsetWidth > 150 ? '150px': true);
+}
+.infobar_post a.name_uinfo, .infobar_post a.uname_psth {
+    color: #32A5E7;
+    font-weight: bold;
+}
+.post-content {
+    color: #515151;
+    font-size: 15px;
+}
+.post-content .img {
+    width: auto;
+    height: auto;
+}
+
+ .cbar_postlist {
+    padding: 26px 0px;
+}
+ .cbarbox_postlist .fastre {
+     float: right;
+    background-color: #32a5e7;
+    border: 1px solid #32a5e7;
+    border-radius: 2px 2px 2px 2px;
+    color: #FFF !important;
+    cursor: pointer;
+     display: inline-block;
+     _display: block;
+     width: 96px;
+     height: 36px;
+     text-align: center;
+     line-height: 36px;
+     font-size: 14px;
+     margin: 0px 0px 0px 10px;
+     padding: 0px !important;
+}
+ .cbarbox_postlist a.fastre:hover {
+    background-color: #2799db;
+    border: 1px solid #309ddb;
+    color: #FFF !important;
+    text-decoration: none;
+}
+.replypost_postlist {
+    padding: 0px 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 0 4px #ECECEC;
+    margin-bottom: 20px;
+}
+.head_postlist {
+    padding: 25px 0px 5px;
+    font-size: 18px;
+    color: #222222;
+}
+.item_postlist {
+    padding: 18px 0px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.pls {
+    width: 56px;
+    overflow: hidden;
+}
+.pls .avatar img {
+    background: #FFF url(//bbs.res.meizu.com/resources/php/bbs/static/image/common/midavt_shadow.gif) 0 100% repeat-x;
+}
+.pls .avatar {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pls img {
+    width: 44px;
+    height: 44px;
+}
+
+.infobar_post a.name_uinfo {
+    display: inline-block;
+    float: left;
+    margin-right: 6px;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    _padding-top: 1px;
+    _width: expression(this.offsetWidth > 150 ? '150px': true);
+}
+.comment {
+    padding: 50px 40px;
+    background-color: #FFF;
+}
+.comment textarea {
+    background-color: #f9f9f9;
+    width: 100%;
+    text-indent: 10px;
+}
+.pnpost {
+    clear: both;
+    margin-top: 30px;
+    height: 38px;
+    line-height: 38px;
+    overflow: hidden;
+}
+.comment .bluebtn {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    height: 36px;
+    display: block;
+    width: 96px;
+    line-height: 36px;
+    text-align: center;
+    background-color: #32a5e7;
+    float: right;
+}
+.comment .bluebtn:hover {
+    background-color: #2799db;
+}
+
+
+

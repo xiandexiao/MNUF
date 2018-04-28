@@ -1,0 +1,109 @@
+.thread-list {
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    -moz-box-shadow: 0 0 4px #cecccc;
+    -webkit-box-shadow: 0 0 4px #cecccc;
+    box-shadow: 0 0 4px #cecccc;
+}
+.thread-list .thread-header {
+    padding: 10px 20px;
+}
+
+.thread-header .header-content {
+    padding: 20px 0;
+}
+.header-content a {
+    padding: 0 5px 0 5px;
+}
+.header-content .dropdown {
+    padding: 0 0 0 20px;
+}
+.header-content .dropdown a:hover{
+    color: #3AA5EF;
+}
+.header-content .btn {
+    float: right;
+    padding: 10px 0;
+    color: #FFF;
+    background-color: #3AA5EF;
+    width: 80px;
+    height: 30px;
+    line-height: 0.5;
+}
+.main {
+    padding: 0 20px;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    -moz-box-shadow: 0 0 4px #cecccc;
+    -webkit-box-shadow: 0 0 4px #cecccc;
+    box-shadow: 0 0 4px #cecccc;
+}
+.listhover_forum tr {
+    border-bottom: 1px solid #E6E6E6;
+}
+.listhover_forum td {
+    padding: 12px 0px !important;
+
+}
+.listhover_forum .avatar {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+.avatar img {
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 22px;
+}
+.shadowbox_avatar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: inline-block;
+    box-shadow: inset 0px 0px 1px #DDDDDD;
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+}
+.maincont_list a, .maincont_list img, .maincont_list em {
+    overflow: hidden;
+    line-height: 30px;
+    vertical-align: middle;
+}
+.maincont_list {
+    overflow: hidden;
+    padding-right: 13px;
+    padding-left: 7px;
+    width: 468px;
+}
+.maincont_list span {
+    color: #3AA5EF;
+    margin-right: 5px;
+}
+
+.maincont_list .xst {
+    font-size: 16px;
+    width: 480px;
+    height: 30px;
+}
+
+.latestreply_list {
+    width: 260px;
+    text-align: right;
+}
+.latestreply_list a, .latestreply_list span {
+    color: #999999;
+    font-size: 12px;
+}
+.latestreply_list .author_list {
+    display: inline-block;
+    max-width: 96px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    _width: expression(this.offsetWidth > 96 ? '96px': true);
+    visibility: visible;
+}

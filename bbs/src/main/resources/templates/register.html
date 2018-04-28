@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>MNUF-注册</title>
+    <link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon"/>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/fonts/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrapValidator.min.css">
+    <script>if(window.top !== window.self){ window.top.location = window.location;}</script>
+    <style>
+        body {
+            height: 0;
+        }
+        .loginscreen.middle-box {
+            width: 360px;
+        }
+        .box {
+            padding: 20px;
+            border-top: 0;
+            color: #666;
+            background-color: #FFF;
+            box-shadow: 0 0 5px #E6E6E6;
+        }
+        .middle-box {
+            padding-top: 0px;
+            margin: 8% auto;
+            text-align: left;
+        }
+        .form-control:focus,
+        .single-line:focus {
+            border-color: #0e9aef !important;
+        }
+        .code-group {
+            display: flex;
+        }
+        #code {
+            max-width: 178px;
+        }
+
+        #button_code {
+            margin-left: 33px;
+            height: 45px;
+        }
+        .code-group small {
+            position: absolute;
+            display: flex;
+            margin-top: 49px;
+        }
+        .loading {
+            width:100%;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 100;
+            background-color: #E6E6E6;
+        }
+        .pic {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+        .pic i {
+            animation: load 1.2s infinite;
+            display: block;
+            height: 50px;
+            width: 6px;
+            float: left;
+            margin: 0 2px;
+            background-color: #3AA5EF;
+            transform: scaleY(0.4); //x 不变，y缩放
+        }
+        .pic i:nth-child(2){animation-delay: 0.1s}
+        .pic i:nth-child(3){animation-delay: 0.2s}
+        .pic i:nth-child(4){animation-delay: 0.3s}
+        .pic i:nth-child(5){animation-delay: 0.5s}
+        @keyframes load {
+            0%,40%,100%{transform: scaleY(0.4)}
+            20%{transform: scaleY(1)}
+        }
+        .form-group {
+            height: 70px;
+            margin-bottom: 0;
+        }
+        .form-group input {
+            height: 45px;
+            border: 1px solid #D8E1E4;
+        }
+    </style>
+</head>
+<div class="loading">
+    <div class="pic">
+        <i></i><i></i><i></i><i></i><i></i>
+    </div>
+</div>
+<div id="particles-js" style="background-color: #EDF4FA"></div>
+<body class="gray-bg" >
+<div class="middle-box text-center loginscreen  animated fadeInDown" style="position: absolute;
+            top: 10px;
+            left: 36%;
+            width: 100%;
+            height: auto;margin: 0 auto">
+
+    <div class="box">
+
+        <div class="title" style="text-align: center;">
+            <img src="/images/brand-1.png">
+            <h3 style="color: #00aeef">注册MNUF，发现更大的校园</h3>
+        </div>
+        <form id="addForm" class="m-t" role="form">
+            <div class="form-group">
+                <input type="text" class="form-control" name="name" placeholder="请输入用户名">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="number" placeholder="绑定学号获取更多权限" maxlength="10">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="请输入密码">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="confirmPassword" placeholder="请再次输入密码">
+            </div>
+            <div class="form-group">
+                <input id="email" type="email" class="form-control" name="email" placeholder="请输入邮箱">
+            </div>
+            <div class="form-group code-group">
+                <input type="text" id="code" name="code" class="form-control" maxlength="10" placeholder="验证码" autocomplete="off">
+                <button type="button" id="button_code" class="btn">获取邮箱验证码</button>
+            </div>
+            <button type="submit" class="btn btn-primary block full-width m-b" style="height: 50px;background-color: #0084ff">注 册</button>
+
+            <p class="text-muted text-center"><small>已经有账户了？</small><a href="login.html">点此登录</a>
+            </p>
+
+        </form>
+    </div>
+</div>
+<!-- 全局js -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<!-- layer javascript -->
+<script src="/js/layer.min.js"></script>
+<!-- iCheck -->
+<script src="/js/icheck.min.js"></script>
+<script src="/js/bootstrapValidator.min.js"></script>
+<script src="/js/particles.min.js"></script>
+<script src="/js/app.js"></script>
+<script>
+    document.onreadystatechange = function () {
+        if (document.readyState === "complete") {
+            document.querySelector(".loading").style.display="none";
+        }
+    }
+    $(document).ready(function () {
+        $('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'iradio_square-green',
+        });
+    });
+
+    $("#button_code").click(function () {
+        //验证邮箱格式是否正确
+        var re = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+        var email = $("#email").val();
+        if (!re.test(email)) {
+            parent.layer.msg('请输入正确邮箱地址', {time: 1500, icon:5});
+            return;
+        }
+        layer.load();
+        //ajax请求判断用户输入的邮箱是否已经注册
+        $.ajax({
+            url: "/sendCode",
+            data:  email,
+            contentType: "application/json; charset=utf-8",
+            type: "POST",
+            dataType: 'json',
+            success: function(data){
+                if (data.success) {
+                    parent.layer.msg(data.msg, {icon: 1});
+                } else {
+                    parent.layer.msg(data.msg, {time: 1500, icon:5});
+                }
+                layer.closeAll('loading');
+            }
+        });
+    });
+
+    $('#addForm').bootstrapValidator({
+        fields: {
+            name: {
+                validators: {
+                    notEmpty: {
+                        message: '用户名不能为空'
+                    },
+                    stringLength: {
+                        max: 30,
+                        message: '用户名长度最多30个字符'
+                    },
+                    remote: {
+                        url: '/isUsername',
+                        message: '用户名已存在'
+                    }
+                }
+            },
+            number: {
+                validators: {
+                    /*notEmpty: {
+                        message: '用户名不能为空'
+                    },*/
+                   /* stringLength: {
+                        max: 10,
+                        message: '学号长度10个字符'
+                    },*/
+                    regexp: {//正则验证
+                        regexp: /^\d{10}$/ ,
+                        message: '学号格式错误'
+                    },
+                    remote: {
+                        url: '/isNumber',
+                        message: '该学号已绑定'
+                    }
+                }
+            },
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: '邮箱不能为空'
+                    },
+                    emailAddress: {
+                        message: '请输入有效的邮箱'
+                    },
+                    remote: {
+                        url: '/isEmail',
+                        message: '邮箱已注册'
+                    }
+                }
+            },
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: '密码不能为空'
+                    },
+                    stringLength: {
+                        min: 5,
+                        max: 30,
+                        message: '密码长度在5到30之间'
+                    }
+                }
+            },
+            confirmPassword: {
+                validators: {
+                    notEmpty: {
+                        message: '确认密码不能为空'
+                    },
+                    identical: {
+                        field: 'password',
+                        message: '两次密码不相同'
+                    }
+                }
+            },
+            code: {
+                validators: {
+                    notEmpty: {
+                        message: '验证码不能为空'
+                    },
+                    stringLength: {
+                        max: 10,
+                        message: '验证码长度最多10个字符'
+                    },
+                    /*remote: {
+                        url: 'remote.php',
+                        message: 'The username is not available'
+                    },*/
+                }
+            },
+        }
+    }).on('success.form.bv', function(e) {
+        // Prevent form submission
+        e.preventDefault();
+
+        $.ajax({
+            url: "/register",
+            data:  $("#addForm").serialize(),
+            type: "POST",
+            dataType: 'json',
+            success: function(data){
+                if (data.success) {
+                    parent.layer.msg(data.msg, {icon: 1});
+                } else {
+                    parent.layer.msg(data.msg, {time: 1500, icon:5});
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

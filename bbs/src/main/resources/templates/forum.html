@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/common.css" >
+    <link rel="stylesheet" href="/fonts/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/thread.css" />
+    <title>MNUF | 发现更大的校园</title>
+</head>
+<body>
+<div class="loding">
+    <div class="pic">
+        <span class="rotate"></span>
+        <b class="loding-text">0%</b>
+    </div>
+</div>
+<div class="container">
+    <div href="javascript:;" id="go-top"></div>
+    <nav id="nav-header" class="navbar navbar-default navbar-fixed-top clear" role="navigation">
+        <div class="container-fluid clear">
+            <div class="navbar-header clear">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bbs-navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a  href="index.html" class="navbar-brand" target="_blank"></a>
+            </div>
+            <div class="collapse navbar-collapse clear" id="bbs-navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">我的校园</a></li>
+                    <li><a href="#">教务系统</a></li>
+                    <li><a href="#">学工部</a></li>
+                    <li><a href="#">全部板块</a></li>
+                    <li id="empty">
+
+                    </li>
+
+                </ul>
+                <div class="login-box clear col-0" id="cust">
+                    <div class="loginArea" style="position: relative">
+                        <div class="log-img-box">
+                            <img src="/avatar/${user.avatar!('no.png')}"  alt="log" class="user-avatar" style="border-radius: 15px;width: 100%;height: 100%;"/>
+                            <ul class="log-dropdown">
+                                <li><a class="actmanage_mzcust" href="/detail">我的账户</a></li>
+                                <li><a href="/home">我的动态</a></li>
+                                <li><a href="/forum">我的帖子</a></li>
+                                <li><a href="/home">我的好友</a></li>
+                                <li><a href="/home" id="pm_ntc">我的消息</a></li>
+                                <li><a href="/home">个人设置</a></li>
+                                <li><a class="logout_mzcust" id="mzLogout" href="/logout">退出账户</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <div class="wp">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="first active"><a href="/" style="color: #3AA5EF">首页</a></li>
+                <li>
+                    <a href="/forum-22-1.html" target="_blank">综合讨论</a>
+                </li>
+                <li>
+                    <a href="/forum-149-1.html" target="_blank">我的校园</a>
+                </li>
+                <li>
+                    <a href="/forum-144-1.html" target="_blank">学工部</a>
+                </li>
+                <li>
+                    <a href="http://myj.meizu.com/" target="_blank">教务系统</a>
+                </li>
+                <li>
+                    <a href="https://bbs.meizu.cn/photo" target="_blank">影像馆</a>
+                </li>
+                <li>
+                    <a href="/forum.php" target="_blank" id="all-block">全部版块</a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control search" placeholder="Search"/>
+                    <a href="#" class=""></a>
+                </div>
+            </form>
+                <div class="bbs-blocks">
+                    <i class="block-arrow" ></i>
+                    <table class="table-item">
+                        <tbody><tr>
+                            <td>
+                                <dl class="block-item">
+                                    <dt class="blueitem"> <i class="fa fa-mortar-board" style="color: #3AA5EF;"></i>&nbsp;&nbsp;校园信息</dt>
+                                    <dd><a target="_blank" href="/forum-22-1.html">我的校园</a></dd>
+                                    <dd><a target="_blank" href="/forum-149-1.html">学工部</a></dd>
+                                    <dd><a target="_blank" href="/forum-144-1.html">教务系统</a></dd>
+                                </dl>
+                            </td>
+                            <td>
+                                <dl class="block-item">
+                                    <dt class="greenitem"> <i class="fa fa-envira" style="color:green;"></i>&nbsp;&nbsp;知识海岸</dt>
+                                    <dd><a target="_blank" href="//bbs.meizu.cn/wan">学习交流</a></dd>
+                                    <dd><a target="_blank" href="/forum-62-1.html">资源分享</a></dd>
+                                </dl>
+                            </td>
+                            <td>
+                                <dl class="block-item">
+                                    <dt class="yellowitem"> <i class="fa fa-camera" style="color: orange"></i>&nbsp;&nbsp;社区生活</dt>
+                                    <dd><a target="_blank" href="/forum-10-1.html">谈天说地</a></dd>
+                                    <dd><a target="_blank" href="/forum-20-1.html">二手交易</a></dd>
+                                    <dd><a target="_blank" href="/forum-84-1.html">摄影天地</a></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                <div class="thread-list t1">
+                    <div class="thread-header">
+                        <div class="header-content clear">
+                            <span style="margin-right: 30px;">当前版块  : <a style="color: #000" target="_self" href="/forum?type=${type!''}">${type!'全部版块'}</a></span>
+                            <a href="/forum">全部</a>
+                            <span>&brvbar;</span>
+                            <a href="/forum?sort=time">最新</a>
+                            <span>&brvbar;</span>
+                            <a href="/forum?sort=visited">热门</a>
+                            <div class="dropdown" style="display: inline-block">
+                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                                    主题分类
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/forum">全部分类</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/forum?type=二手交易">二手交易</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/forum?type=资源分享">资源分享</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/forum?type=综合讨论">综合讨论</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown" style="display: inline-block">
+                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                                    排序方式
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/forum">默认排序</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/forum?sort=time&amp;type=${type!''}">发帖时间</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/forum?sort=visited&amp;type=${type!''}">访问量</a></li>
+                                </ul>
+                            </div>
+                            <a href="javascript:;" class="btn" id="newspecial" onclick="" title="发新帖">发帖</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12" >
+                <div class="main">
+                    <table width="100%" style="">
+                        <tbody  class="listhover_forum">
+                        <#list rows as row>
+                            <tr>
+                                <td class="userhead"><a class="avatar" href="#"><img src="/avatar/${row.userAvatar!('no.png')}" style="cursor: pointer;"><span class="shadowbox_avatar"> </span></a></td>
+                                <th class="itemcont_threadlist">
+                                    <div class="maincont_list">
+                                        <span class="">[<a href="#">${row.postType!'啦啦~~'}</a>]</span>
+                                        <a href="/detail-post/${row.postId}"  class="xst gv" title="${row.postTitle}" target="_blank">${row.postTitle}</a>
+                                    </div>
+                                </th>
+                                <td class="latestreply_list">
+<span>
+<a href="#" class="author_list">${row.userName}</a></span>
+                                    <br><span class="date_list"><span title="${(row.createTime?string('yyyy-MM-dd HH:mm:ss'))!('不知某时')}">${(row.createTime?string('MM月dd日 HH时mm分'))!('不知某时')}</span></span>
+                                </td>
+                            </tr>
+                        </#list>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="/js/common.js"></script>
+</html>
